@@ -1,4 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Cashaw Management — Brand Packet</title>
+<meta name="description" content="The brand system behind Cashaw Management Inc. and its five brands: core values, brand family, colour, typography, logo usage and operating standards."/>
+<meta name="theme-color" content="#0b1626"/>
+<link rel="icon" type="image/png" href="assets/cashaw-logo.png"/>
+<link rel="apple-touch-icon" href="assets/cashaw-logo.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Cashaw Management"/>
+<meta property="og:title" content="Cashaw Management — Brand Packet"/>
+<meta property="og:description" content="The brand system behind Cashaw Management Inc. and its five brands: core values, brand family, colour, typography, logo usage and operating standards."/>
+<meta property="og:url" content="https://kushkations.github.io/cashaw-brand-packet/"/>
+<meta property="og:image" content="https://kushkations.github.io/cashaw-brand-packet/assets/og-cover.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Cashaw Management — Brand Packet"/>
+<meta name="twitter:description" content="The brand system behind Cashaw Management Inc. and its five brands: core values, brand family, colour, typography, logo usage and operating standards."/>
+<meta name="twitter:image" content="https://kushkations.github.io/cashaw-brand-packet/assets/og-cover.jpg"/>
 <style>
   /* ===========================================================
      CASHAW MANAGEMENT — BRAND PACKET
@@ -110,6 +131,17 @@
     font-weight:600;cursor:pointer;padding:6px 10px;border-radius:5px;line-height:1.2}
   .tgl button[aria-pressed="true"]{background:var(--royal);color:#fff}
   :root[data-theme="dark"] .tgl button[aria-pressed="true"]{color:#0b1626}
+
+  /* ---------- MOBILE SHORTCUT BAR (under 980px the header nav + rail hide) ---------- */
+  .mobar{display:none;position:sticky;top:var(--header-h);z-index:70;background:var(--bg);
+    border-bottom:1px solid var(--hair);padding:10px 0}
+  .mobar .in{display:flex;gap:8px;overflow-x:auto;padding:0 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .mobar .in::-webkit-scrollbar{display:none}
+  .mobar a{flex:none;text-decoration:none;font-size:.875rem;font-weight:600;color:var(--ink-soft);
+    border:1px solid var(--hair);border-radius:7px;padding:8px 14px;background:var(--surface);white-space:nowrap}
+  .mobar a.on{background:var(--royal);color:#fff;border-color:var(--royal)}
+  :root[data-theme="dark"] .mobar a.on{color:#0b1626}
+  @media (max-width:980px){ .mobar{display:block} }
 
   /* ---------- HERO ---------- */
   .hero{position:relative;overflow:hidden;color:#fff;padding:104px 0 100px;
@@ -318,6 +350,37 @@
   .carve-rule b{color:var(--kk-accent);font-weight:700}
   .carve .cell,.carve .sw,.carve .scroll{background:var(--bg)}
 
+  /* ---------- LOGO USAGE ---------- */
+  .logogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .lspec{border:1px solid var(--hair);border-radius:12px;overflow:hidden;background:var(--bg)}
+  .lspec .frame{background:#fff;padding:26px;display:flex;align-items:center;justify-content:center;
+    min-height:132px;position:relative}
+  .lspec .frame img{max-height:64px;max-width:100%;width:auto;object-fit:contain}
+  .lspec .frame.zone::before{content:"";position:absolute;inset:18px;border:2px dashed #1546c4;border-radius:6px}
+  .lspec .cap{padding:14px 16px;border-top:1px solid var(--hair)}
+  .lspec .cap b{display:block;font-size:.9375rem;font-weight:700}
+  .lspec .cap span{font-size:.875rem;color:var(--ink-soft)}
+  .dont .frame{background:#fff}
+  .dont .frame img{filter:hue-rotate(180deg) saturate(2)}
+  .stretch .frame img{width:100%;max-height:none;height:64px;object-fit:fill}
+  .badcontrast .frame{background:#7a5a06}
+
+  .dl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  .dl a{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;
+    border:1px solid var(--hair);border-radius:8px;padding:13px 16px;background:var(--bg);
+    font-size:.9375rem;font-weight:600;color:var(--ink);transition:border-color .15s,background .15s}
+  .dl a:hover{border-color:var(--royal);background:var(--surface-2)}
+  .dl a span{font-size:.8125rem;font-weight:500;color:var(--ink-faint);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  /* ---------- PHOTOGRAPHY ---------- */
+  .photogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .shot{border:1px solid var(--hair);border-radius:12px;overflow:hidden;background:var(--bg)}
+  .shot img{width:100%;height:210px;object-fit:cover;display:block}
+  .shot .cap{padding:13px 16px;font-size:.875rem;color:var(--ink-soft);border-top:1px solid var(--hair)}
+  .shot.wide{grid-column:span 2}
+  .shot.wide img{height:260px}
+
   /* ---------- FOOTER ---------- */
   .foot{background:var(--navy-900);color:#dbe5f2;padding:64px 0 32px}
   .foot h4{color:#fff;font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
@@ -332,7 +395,7 @@
     font-size:.9375rem;color:#c3d2e6}
 
   @media (max-width:980px){
-    .grid3{grid-template-columns:repeat(2,1fr)}
+    .grid3,.logogrid,.photogrid,.dl{grid-template-columns:repeat(2,1fr)}
     .swatches{grid-template-columns:repeat(3,1fr)}
     .fgrid{grid-template-columns:1fr 1fr}
     .site-nav{display:none}
@@ -341,13 +404,17 @@
     .wrap,.hdr{padding:0 20px}
     .hero{padding:72px 0 66px}
     section{padding:60px 0}
-    .grid3,.grid2,.fgrid{grid-template-columns:1fr}
+    .grid3,.grid2,.fgrid,.logogrid,.photogrid,.dl{grid-template-columns:1fr}
+    .shot.wide{grid-column:auto}
     .swatches{grid-template-columns:repeat(2,1fr)}
     .hero-cta .btn{width:100%}
     .hero-meta{gap:26px}
     .carve{padding:22px}
   }
 </style>
+
+</head>
+<body>
 
 <!-- ================= STICKY HEADER ================= -->
 <header class="site-header">
@@ -361,6 +428,8 @@
       <a href="#family" data-jump="family">Brands</a>
       <a href="#color" data-jump="color">Color</a>
       <a href="#type" data-jump="type">Type &amp; Voice</a>
+      <a href="#logo" data-jump="logo">Logo Use</a>
+      <a href="#photo" data-jump="photo">Photography</a>
       <a href="#carveout" data-jump="carveout">Carve-Out</a>
       <a href="#standards" data-jump="standards">Standards</a>
     </nav>
@@ -373,6 +442,20 @@
     </div>
   </div>
 </header>
+
+<nav class="mobar" aria-label="Sections">
+  <div class="in">
+    <a href="#values" data-jump="values">Values</a>
+    <a href="#family" data-jump="family">Brands</a>
+    <a href="#color" data-jump="color">Color</a>
+    <a href="#type" data-jump="type">Type &amp; Voice</a>
+    <a href="#logo" data-jump="logo">Logo Use</a>
+    <a href="#photo" data-jump="photo">Photography</a>
+    <a href="#carveout" data-jump="carveout">Carve-Out</a>
+    <a href="#standards" data-jump="standards">Standards</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="top" style="border-top:0">
@@ -411,6 +494,8 @@
       <a href="#family" data-jump="family"><i class="dot"></i>Brand Family</a>
       <a href="#color" data-jump="color"><i class="dot"></i>Color</a>
       <a href="#type" data-jump="type"><i class="dot"></i>Type &amp; Voice</a>
+      <a href="#logo" data-jump="logo"><i class="dot"></i>Logo Use</a>
+      <a href="#photo" data-jump="photo"><i class="dot"></i>Photography</a>
       <a href="#carveout" data-jump="carveout"><i class="dot"></i>KK Carve-Out</a>
       <a href="#standards" data-jump="standards"><i class="dot"></i>Standards</a>
     </nav>
@@ -507,7 +592,7 @@
         <span class="role">Sister stays brand</span>
         <h3>All Exclusive BNB</h3>
         <p>A separate stays brand, established 2022, kept deliberately apart from the 420 identity. The split is strategic: cannabis positioning is an asset with the guests who want it and a filter with the guests who don&rsquo;t, so All Exclusive hosts the second group without diluting the first. Runs its own Facebook presence and carries a mural at Altitude.</p>
-        <div class="facts"><span>Active</span><span>ESTD 2022</span><span>Non-420 audience</span></div>
+        <div class="facts"><span>Active</span><span>ESTD 2022</span><span>Non-420 audience</span><span>Positioning line: draft, pending sign-off</span></div>
       </div>
     </div>
 
@@ -608,6 +693,98 @@
   </div>
 </section>
 
+<!-- ================= LOGO USAGE ================= -->
+<section id="logo">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Brand assets</p>
+      <h2>Logo usage and downloads.</h2>
+      <p class="lede">Every mark below is the approved file. Grab it from here rather than pulling a copy out of an old deck or screenshotting one off a listing.</p>
+    </div>
+
+    <div class="logogrid">
+      <div class="lspec">
+        <div class="frame zone"><img src="assets/cashaw-logo.png" alt="Cashaw logo with clear space shown"/></div>
+        <div class="cap"><b>Clear space</b><span>Keep free space around the mark equal to the height of the letter C. Nothing crosses the dashed line.</span></div>
+      </div>
+      <div class="lspec">
+        <div class="frame"><img src="assets/cashaw-logo.png" style="max-height:26px" alt="Cashaw logo at minimum size"/></div>
+        <div class="cap"><b>Minimum size</b><span>Never below 26px tall on screen or 0.75in in print. Below that the wordmark stops being readable.</span></div>
+      </div>
+      <div class="lspec">
+        <div class="frame"><img src="assets/clearsite-logo.png" alt="Clearsite logo on white"/></div>
+        <div class="cap"><b>Give it a clean ground</b><span>Place marks on white or a plain brand colour. Never on a busy photo or a competing pattern.</span></div>
+      </div>
+      <div class="lspec dont">
+        <div class="frame"><img src="assets/cashaw-logo.png" alt="Example of incorrect recolouring"/></div>
+        <div class="cap"><b>Don&rsquo;t recolour</b><span>The Cashaw mark is gold. Do not tint, invert, or swap it to another brand&rsquo;s colour.</span></div>
+      </div>
+      <div class="lspec dont stretch">
+        <div class="frame"><img src="assets/cashaw-logo.png" alt="Example of incorrect stretching"/></div>
+        <div class="cap"><b>Don&rsquo;t distort</b><span>Scale proportionally. Never stretch, squash, rotate, or add a drop shadow or outline.</span></div>
+      </div>
+      <div class="lspec badcontrast">
+        <div class="frame"><img src="assets/cashaw-logo.png" alt="Example of insufficient contrast"/></div>
+        <div class="cap"><b>Don&rsquo;t kill the contrast</b><span>Gold on gold, or any low-contrast pairing, makes the mark disappear. Use white or navy behind it.</span></div>
+      </div>
+    </div>
+
+    <p class="sub-label" style="margin-top:34px">Download the marks</p>
+    <div class="dl">
+      <a href="assets/cashaw-logo.png" download>Cashaw Management <span>PNG</span></a>
+      <a href="assets/cashaw-logo.svg" download>Cashaw Management <span>SVG</span></a>
+      <a href="assets/cashaw-logo-white.svg" download>Cashaw, white <span>SVG</span></a>
+      <a href="assets/cashaw-logo-navy.svg" download>Cashaw, navy <span>SVG</span></a>
+      <a href="assets/kushkations-logo.png" download>KushKations <span>PNG</span></a>
+      <a href="assets/allexclusive-logo.png" download>All Exclusive BNB <span>PNG</span></a>
+      <a href="assets/sameday-logo.png" download>Same-Day BNB Cleaners <span>PNG</span></a>
+      <a href="assets/clearsite-logo.png" download>Clearsite <span>PNG</span></a>
+    </div>
+    <p class="note"><b>Still missing:</b> vector versions of the four sister-brand marks. Only Cashaw has an SVG today, so the others should not be blown up large for print until vectors exist.</p>
+  </div>
+</section>
+
+<!-- ================= PHOTOGRAPHY ================= -->
+<section id="photo" class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Visual system</p>
+      <h2>Photography.</h2>
+      <p class="lede">Our homes are loud on purpose, and the photography should say so. Shoot wide, shoot bright, and show the room doing its job. A guest is choosing a place to bring nine friends, not admiring the paint.</p>
+    </div>
+    <div class="photogrid">
+      <div class="shot wide"><img src="assets/photos/living.jpg" alt="Games room with pool table, air hockey and arcade basketball"/>
+        <div class="cap"><b>Lead with the amenity.</b> The room that sells the booking goes first.</div></div>
+      <div class="shot"><img src="assets/photos/theater.jpg" alt="Home theatre room with recliner seating"/>
+        <div class="cap">Show seating counts. Groups are doing the maths.</div></div>
+      <div class="shot"><img src="assets/photos/hottub.jpg" alt="Covered hot tub on a back patio"/>
+        <div class="cap">Outdoor amenities in daylight, water clean and running.</div></div>
+      <div class="shot"><img src="assets/photos/kitchen.jpg" alt="Open kitchen with island seating"/>
+        <div class="cap">Wide angle, lights on, counters clear.</div></div>
+      <div class="shot"><img src="assets/photos/bedroom.jpg" alt="Bedroom with bold wall colour and made bed"/>
+        <div class="cap">Beds made to standard. The photo is the promise.</div></div>
+    </div>
+    <div class="grid2" style="margin-top:24px">
+      <div class="cell" style="--accent:var(--b-kk)"><h3>Do</h3>
+        <ul class="vlist" style="margin-top:12px">
+          <li>Shoot in daylight with every lamp switched on.</li>
+          <li>Go wide enough to show how many people the space holds.</li>
+          <li>Keep the bold paint and murals in frame. That is the brand.</li>
+          <li>Style to checkout standard: beds made, counters clear, towels set.</li>
+        </ul>
+      </div>
+      <div class="cell" style="--accent:var(--b-clearsite)"><h3>Don&rsquo;t</h3>
+        <ul class="vlist" style="margin-top:12px">
+          <li>No house numbers, street signs, or anything that identifies an address.</li>
+          <li>No guests, staff, or personal belongings in shot.</li>
+          <li>No flash-lit, cluttered, or half-cleaned rooms.</li>
+          <li>No heavy filters. Colour should match what the guest walks into.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CARVE-OUT ================= -->
 <section id="carveout">
   <div class="wrap">
@@ -702,6 +879,8 @@
           <a href="#family">Brand Family</a>
           <a href="#color">Color</a>
           <a href="#type">Type &amp; Voice</a>
+          <a href="#logo">Logo Usage &amp; Downloads</a>
+          <a href="#photo">Photography</a>
           <a href="#carveout">KushKations Carve-Out</a>
           <a href="#standards">Operating Standards</a>
         </nav>
@@ -739,7 +918,7 @@
   var bt=document.getElementById('btop');
   if(bt) bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 
-  var ids=['values','family','color','type','carveout','standards'];
+  var ids=['values','family','color','type','logo','photo','carveout','standards'];
   var links=Array.prototype.slice.call(document.querySelectorAll('[data-jump]'));
   function mark(id){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('data-jump')===id);});}
   var seen={};
@@ -752,3 +931,6 @@
   ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
 })();
 </script>
+
+</body>
+</html>
