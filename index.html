@@ -1,556 +1,554 @@
 <title>Cashaw Management — Brand Packet</title>
 <style>
   /* ===========================================================
-     CASHAW MANAGEMENT — HIGH-CONTRAST PROFESSIONAL SYSTEM
-     Slate navy · crisp white · royal blue + teal accents.
-     Every text pair verified at WCAG AA (>= 4.5:1).
-     Typeface: Inter / system-ui. No serif.
+     CASHAW MANAGEMENT — BRAND PACKET
+     Slate navy · crisp white · royal blue + teal.
+     All text verified WCAG AA (>= 4.5:1). Inter / system-ui only.
+     Layout: sticky header · hero w/ dual CTA · 3-col bordered grids.
      =========================================================== */
   :root{
-    /* grounds */
-    --white:#ffffff;
-    --bg:#ffffff;
-    --surface:#f4f7fb;
-    --surface-2:#e7edf5;
-    --hair:#cbd6e4;
-
-    /* slate navy family */
-    --navy-900:#0b1626;
-    --navy-800:#12233a;
-    --navy-700:#1c3454;
-
-    /* ink — AA verified on --bg and --surface */
-    --ink:#0b1626;        /* 17.9:1 on white */
-    --ink-soft:#41546c;   /* 7.4:1 on white  */
-    --ink-faint:#55677e;  /* 5.5:1 on white  */
-
-    /* accents — AA verified as text on white/surface */
-    --royal:#1546c4;      /* 7.2:1 on white */
-    --royal-strong:#0f3aa8;
-    --teal:#0f6f74;       /* 5.2:1 on white */
-
-    /* coordinated brand ramp: royal blue -> teal */
-    --b-cashaw:#1546c4;
-    --b-kk:#0b5aa8;
-    --b-aebnb:#0a6485;
-    --b-sameday:#0f6f74;
-    --b-clearsite:#155e63;
-
+    --bg:#ffffff; --surface:#f7f9fc; --surface-2:#eef3f9; --hair:#cbd6e4; --hair-soft:#dde5ef;
+    --navy-900:#0b1626; --navy-800:#12233a; --navy-700:#1c3454;
+    --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
+    --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
+    --b-cashaw:#1546c4; --b-kk:#0b5aa8; --b-aebnb:#0a6485;
+    --b-sameday:#0f6f74; --b-clearsite:#155e63;
+    --kk-accent:#3d6f42;
     --focus:#1546c4;
-    --kk-accent:#3d6f42;   /* KK carve-out, 5.50:1 on surface */
-    --shadow:0 1px 2px rgba(11,22,38,.06),0 12px 30px -14px rgba(11,22,38,.28);
+    --header-h:70px;
     --sans:"Inter","Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --rail-w:212px; --rail-w2:224px;
   }
-  /* dark tokens — the explicit [data-theme] blocks below override these both ways */
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160;
-      --ink:#f3f7fc;        /* 16.4:1 on navy */
-      --ink-soft:#b6c6da;   /* 8.6:1  on navy */
-      --ink-faint:#98abc4;  /* 6.3:1  on navy */
-      --royal:#7aa9ff;      /* 7.9:1  on navy */
-      --royal-strong:#9dc0ff;
-      --teal:#4fd1c5;       /* 9.6:1  on navy */
+      --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160; --hair-soft:#213550;
+      --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
+      --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
       --b-cashaw:#7aa9ff; --b-kk:#6fb6f2; --b-aebnb:#57c3dd;
       --b-sameday:#4fd1c5; --b-clearsite:#5fcfc2;
-      --focus:#7aa9ff;
-      --kk-accent:#65bc7b;   /* 6.81:1 on dark surface */
-      --shadow:0 1px 2px rgba(0,0,0,.45),0 16px 36px -16px rgba(0,0,0,.75);
+      --kk-accent:#65bc7b; --focus:#7aa9ff;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160;
+    --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160; --hair-soft:#213550;
     --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
-    --royal:#7aa9ff; --royal-strong:#9dc0ff; --teal:#4fd1c5;
+    --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
     --b-cashaw:#7aa9ff; --b-kk:#6fb6f2; --b-aebnb:#57c3dd;
     --b-sameday:#4fd1c5; --b-clearsite:#5fcfc2;
-    --focus:#7aa9ff;
-    --kk-accent:#65bc7b;
-    --shadow:0 1px 2px rgba(0,0,0,.45),0 16px 36px -16px rgba(0,0,0,.75);
+    --kk-accent:#65bc7b; --focus:#7aa9ff;
   }
   :root[data-theme="light"]{
-    --bg:#ffffff; --surface:#f4f7fb; --surface-2:#e7edf5; --hair:#cbd6e4;
+    --bg:#ffffff; --surface:#f7f9fc; --surface-2:#eef3f9; --hair:#cbd6e4; --hair-soft:#dde5ef;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
-    --royal:#1546c4; --royal-strong:#0f3aa8; --teal:#0f6f74;
+    --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
     --b-cashaw:#1546c4; --b-kk:#0b5aa8; --b-aebnb:#0a6485;
     --b-sameday:#0f6f74; --b-clearsite:#155e63;
-    --focus:#1546c4;
-    --kk-accent:#3d6f42;
-    --shadow:0 1px 2px rgba(11,22,38,.06),0 12px 30px -14px rgba(11,22,38,.28);
+    --kk-accent:#3d6f42; --focus:#1546c4;
   }
 
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
-  /* ---------- TYPE SCALE: bold 32px+ heads, 17px body, 1.5 leading ---------- */
+  /* ---------- TYPE: bold 32px+ heads · 17px body · 1.5 leading ---------- */
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-    font-size:1.0625rem;      /* 17px */
-    line-height:1.5;
-    font-weight:400;-webkit-font-smoothing:antialiased}
-  h1,h2,h3,h4{margin:0;font-family:var(--sans);color:var(--ink);text-wrap:balance}
-  h1{font-size:clamp(2.5rem,5.4vw,3.75rem);font-weight:800;line-height:1.1;letter-spacing:-.022em}
-  h2{font-size:clamp(2rem,3.4vw,2.625rem);font-weight:700;line-height:1.18;letter-spacing:-.018em} /* >=32px */
-  h3{font-size:1.375rem;font-weight:700;line-height:1.3;letter-spacing:-.01em}                     /* 22px */
+    font-size:1.0625rem;line-height:1.5;font-weight:400;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{margin:0;color:var(--ink);text-wrap:balance}
+  h1{font-size:clamp(2.5rem,5.2vw,3.75rem);font-weight:800;line-height:1.1;letter-spacing:-.022em}
+  h2{font-size:clamp(2rem,3.2vw,2.5rem);font-weight:700;line-height:1.2;letter-spacing:-.018em}
+  h3{font-size:1.3125rem;font-weight:700;line-height:1.3;letter-spacing:-.008em}
   h4{font-size:.8125rem;font-weight:700;line-height:1.4}
   p{margin:0;line-height:1.5}
   a{color:inherit}
+  :where(a,button):focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
   .eyebrow{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--royal)}
-  .lede{font-size:1.125rem;line-height:1.5;color:var(--ink-soft);max-width:62ch}
-  :where(a,button,input):focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+  .lede{font-size:1.125rem;color:var(--ink-soft);max-width:64ch}
 
-  /* ---------- THEME TOGGLE ---------- */
-  .toggle{position:fixed;top:16px;right:16px;z-index:60;display:inline-flex;gap:4px;
-    background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:4px;box-shadow:var(--shadow)}
-  .toggle button{border:0;background:transparent;color:var(--ink-soft);font:inherit;font-size:.875rem;
-    font-weight:600;cursor:pointer;padding:6px 13px;border-radius:6px;line-height:1.2}
-  .toggle button[aria-pressed="true"]{background:var(--royal);color:#fff}
-  :root[data-theme="dark"] .toggle button[aria-pressed="true"]{background:var(--royal);color:#0b1626}
+  /* ---------- BUTTONS ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font:inherit;font-size:1rem;font-weight:700;line-height:1;cursor:pointer;
+    padding:15px 26px;border-radius:8px;text-decoration:none;border:2px solid transparent;
+    transition:background .15s,color .15s,border-color .15s}
+  .btn-primary{background:var(--royal);color:#fff;border-color:var(--royal)}
+  .btn-primary:hover{background:var(--royal-hover);border-color:var(--royal-hover)}
+  :root[data-theme="dark"] .btn-primary{color:#0b1626}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--hair)}
+  .btn-outline:hover{border-color:var(--royal);color:var(--royal)}
+  .btn-sm{padding:11px 19px;font-size:.9375rem;border-radius:7px}
+  /* on the navy hero */
+  .hero .btn-outline{color:#ffffff;border-color:rgba(255,255,255,.5)}
+  .hero .btn-outline:hover{border-color:#ffffff;background:rgba(255,255,255,.1);color:#ffffff}
+  .hero .btn-primary{background:#ffffff;color:#0b1626;border-color:#ffffff}
+  .hero .btn-primary:hover{background:#dbe5f2;border-color:#dbe5f2;color:#0b1626}
+
+  /* ---------- STICKY HEADER ---------- */
+  .site-header{position:sticky;top:0;z-index:80;background:var(--bg);
+    border-bottom:1px solid var(--hair);height:var(--header-h)}
+  .hdr{max-width:1200px;margin:0 auto;padding:0 32px;height:100%;
+    display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+  .logo .mark{width:32px;height:32px;border-radius:7px;display:grid;place-items:center;
+    background:var(--royal);color:#fff;font-size:.9375rem;font-weight:800;flex:none}
+  :root[data-theme="dark"] .logo .mark{color:#0b1626}
+  .logo .name{font-size:1rem;font-weight:800;letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+  .logo .name span{font-weight:500;color:var(--ink-faint)}
+  .site-nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{text-decoration:none;color:var(--ink-soft);font-size:.9375rem;font-weight:500;
+    padding:9px 13px;border-radius:7px;white-space:nowrap;
+    border-bottom:2px solid transparent;transition:color .15s,background .15s}
+  .site-nav a:hover{color:var(--ink);background:var(--surface-2)}
+  .site-nav a.on{color:var(--royal);font-weight:700;background:var(--surface-2)}
+  .hdr-right{display:flex;align-items:center;gap:12px;flex:none}
+  .tgl{display:inline-flex;gap:2px;background:var(--surface);border:1px solid var(--hair);
+    border-radius:7px;padding:3px}
+  .tgl button{border:0;background:transparent;color:var(--ink-soft);font:inherit;font-size:.8125rem;
+    font-weight:600;cursor:pointer;padding:6px 10px;border-radius:5px;line-height:1.2}
+  .tgl button[aria-pressed="true"]{background:var(--royal);color:#fff}
+  :root[data-theme="dark"] .tgl button[aria-pressed="true"]{color:#0b1626}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;overflow:hidden;color:#ffffff;padding:88px 0 76px;
+  .hero{position:relative;overflow:hidden;color:#fff;padding:104px 0 100px;
     background:linear-gradient(155deg,#16294a 0%,var(--navy-900) 58%,#080f1c 100%)}
   .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:repeating-linear-gradient(90deg,rgba(122,169,255,.07) 0 1px,transparent 1px 84px);
     mask:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent)}
-  .hero-in{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 32px}
-  .hero .eyebrow{color:#9dc0ff}                    /* 8.1:1 on hero navy */
-  .crest{display:inline-flex;align-items:center;gap:11px;margin-bottom:22px;
-    font-weight:800;letter-spacing:.06em;font-size:.9375rem;color:#ffffff}
-  .crest .mark{width:34px;height:34px;border-radius:7px;display:grid;place-items:center;
-    background:var(--royal);color:#fff;font-size:1rem;font-weight:800}
-  :root[data-theme="dark"] .crest .mark{color:#0b1626}
-  .hero h1{color:#ffffff;margin-top:8px}
-  .hero h1 em{font-style:normal;color:#7aa9ff}     /* 7.9:1 on hero navy */
-  .hero .sub{margin-top:20px;font-size:1.1875rem;line-height:1.5;color:#dbe5f2;max-width:56ch} /* 12.6:1 */
-  .hero .tag{margin-top:24px;font-size:1.1875rem;font-weight:600;color:#a8c4e8}
-  .chips{margin-top:36px;display:flex;flex-wrap:wrap;gap:9px}
-  .chips span{font-size:.875rem;font-weight:500;color:#e4ecf7;
-    border:1px solid rgba(228,236,247,.34);padding:7px 14px;border-radius:6px}
-
-  /* ---------- SHELL ---------- */
-  .shell{max-width:1320px;margin:0 auto;padding:0 32px;
-    display:grid;grid-template-columns:var(--rail-w) minmax(0,1fr) var(--rail-w2);gap:40px;align-items:start}
-
-  /* ---------- SIDE PANELS ---------- */
-  .rail{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow-y:auto;padding:26px 0 40px}
-  .rail h4{text-transform:uppercase;letter-spacing:.13em;color:var(--ink-faint);margin:0 0 12px}
-  .rail nav{display:flex;flex-direction:column;gap:2px}
-  .rail nav a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink-soft);
-    font-size:.9375rem;font-weight:500;padding:9px 12px;border-radius:6px;
-    border-left:3px solid transparent;line-height:1.35}
-  .rail nav a:hover{background:var(--surface-2);color:var(--ink)}
-  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:var(--royal);background:var(--surface-2)}
-  .rail nav a .dot{width:8px;height:8px;border-radius:2px;background:currentColor;opacity:.45;flex:none}
-  .rail nav a.on .dot{opacity:1;background:var(--royal)}
-  .rail .sep{height:1px;background:var(--hair);margin:24px 0}
-  .qbox{display:flex;flex-direction:column;gap:7px}
-  .qbox a{display:flex;flex-direction:column;gap:2px;text-decoration:none;padding:11px 13px;
-    border:1px solid var(--hair);border-radius:8px;background:var(--surface);
-    transition:border-color .15s,background .15s}
-  .qbox a:hover{border-color:var(--royal);background:var(--surface-2)}
-  .qbox a b{font-size:.9375rem;color:var(--ink);font-weight:700}
-  .qbox a span{font-size:.8125rem;color:var(--ink-faint);line-height:1.4}
-  .backtop{margin-top:16px;width:100%;font:inherit;font-size:.875rem;font-weight:600;cursor:pointer;
-    color:var(--ink-soft);background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:10px}
-  .backtop:hover{color:var(--ink);border-color:var(--royal)}
-
-  .mobar{display:none;position:sticky;top:0;z-index:50;background:var(--bg);
-    border-bottom:1px solid var(--hair);padding:10px 0}
-  .mobar .in{display:flex;gap:8px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
-  .mobar .in::-webkit-scrollbar{display:none}
-  .mobar a{flex:none;text-decoration:none;font-size:.875rem;font-weight:600;color:var(--ink-soft);
-    border:1px solid var(--hair);border-radius:6px;padding:8px 14px;background:var(--surface)}
-  .mobar a.on{background:var(--royal);color:#fff;border-color:var(--royal)}
-  :root[data-theme="dark"] .mobar a.on{color:#0b1626}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .eyebrow{color:#9dc0ff}
+  .hero h1{color:#fff;margin-top:16px;max-width:15ch}
+  .hero h1 em{font-style:normal;color:#7aa9ff}
+  .hero .sub{margin-top:22px;font-size:1.1875rem;color:#dbe5f2;max-width:60ch}
+  .hero-cta{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
+  .hero-meta{margin-top:44px;padding-top:26px;border-top:1px solid rgba(219,229,242,.22);
+    display:flex;flex-wrap:wrap;gap:38px}
+  .hero-meta div b{display:block;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.2}
+  .hero-meta div span{font-size:.9375rem;color:#a8c4e8}
 
   /* ---------- SECTIONS ---------- */
-  main section{padding:68px 0;border-top:1px solid var(--hair)}
-  main section:first-child{border-top:0}
-  .head{display:flex;flex-direction:column;gap:14px;margin-bottom:40px;max-width:64ch}
+  section{padding:88px 0;scroll-margin-top:calc(var(--header-h) + 8px)}
+  section + section{border-top:1px solid var(--hair-soft)}
+  .head{display:flex;flex-direction:column;gap:15px;margin-bottom:48px;max-width:66ch}
 
-  .values{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);
-    border:1px solid var(--hair);border-radius:10px;overflow:hidden}
-  .val{background:var(--surface);padding:26px 26px 28px;display:flex;flex-direction:column;gap:8px}
-  .val .n{font-size:.8125rem;font-weight:800;color:var(--royal);letter-spacing:.06em}
-  .val h3 span{display:block;font-weight:600;font-size:.8125rem;text-transform:uppercase;
-    letter-spacing:.13em;color:var(--ink-faint);margin-top:5px}
-  .val p{color:var(--ink-soft);font-size:1rem}
-
-  .brands{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .brand{background:var(--surface);border:1px solid var(--hair);border-radius:10px;padding:26px;
-    box-shadow:var(--shadow);display:flex;flex-direction:column;gap:13px;position:relative;overflow:hidden}
-  .brand::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acc)}
-  .brand.lead{grid-column:1/-1}
-  .bhead{display:flex;align-items:center;gap:13px}
-  .bhead .logo{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;flex:none;
-    font-size:1.0625rem;font-weight:800;color:#fff;background:var(--acc)}
-  :root[data-theme="dark"] .bhead .logo{color:#0b1626}
-  .brand .role{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--acc)}
-  .brand p{color:var(--ink-soft);font-size:1rem}
-  .facts{display:flex;flex-wrap:wrap;gap:7px}
-  .facts span{font-size:.8125rem;font-weight:500;color:var(--ink-soft);background:var(--surface-2);
+  /* ---------- 3-COLUMN GRID: borders, not shadows ---------- */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .cell{border:1px solid var(--hair);border-radius:12px;padding:32px 28px;background:var(--bg);
+    display:flex;flex-direction:column;gap:12px;transition:border-color .15s}
+  .cell:hover{border-color:var(--royal)}
+  .icon{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;flex:none;
+    border:1px solid var(--hair);background:var(--surface);color:var(--accent,var(--royal));margin-bottom:6px}
+  .icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.9;
+    stroke-linecap:round;stroke-linejoin:round}
+  .cell .sub-es{font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.13em;
+    color:var(--ink-faint)}
+  .cell p{color:var(--ink-soft);font-size:1rem}
+  .cell .role{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--accent)}
+  .facts{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+  .facts span{font-size:.8125rem;font-weight:500;color:var(--ink-soft);background:var(--surface);
     border:1px solid var(--hair);padding:5px 11px;border-radius:5px}
-  .brand .go{color:var(--acc);font-weight:700;text-decoration:none;font-size:.9375rem}
-  .brand .go:hover{text-decoration:underline}
+  .cell .go{margin-top:auto;padding-top:6px;color:var(--accent);font-weight:700;
+    text-decoration:none;font-size:.9375rem}
+  .cell .go:hover{text-decoration:underline}
 
-  .ramp{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}
-  .ramp .r,.sw{border:1px solid var(--hair);border-radius:8px;overflow:hidden;background:var(--surface)}
-  .ramp .r .c{height:62px}
-  .sw .c{height:66px}
-  .ramp .r .t,.sw .t{padding:10px 12px;display:flex;flex-direction:column;gap:2px}
-  .ramp .r b,.sw b{font-size:.875rem;font-weight:700}
-  .ramp .r code,.sw code{font-size:.8125rem;color:var(--ink-faint);
-    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-  .ramp .r .ratio,.sw .ratio{font-size:.75rem;font-weight:600;color:var(--teal)}
-  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  /* swatches */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .sw{border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--bg)}
+  .sw .c{height:72px}
+  .sw .t{padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+  .sw b{font-size:.875rem;font-weight:700}
+  .sw code{font-size:.8125rem;color:var(--ink-faint);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .sw .ratio{font-size:.75rem;font-weight:600;color:var(--teal)}
+  .sub-label{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;
+    color:var(--ink-faint);margin-bottom:14px}
 
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .card{background:var(--surface);border:1px solid var(--hair);border-radius:10px;padding:26px;box-shadow:var(--shadow)}
-  .card h3{margin-bottom:16px}
-  .scale{display:flex;flex-direction:column;gap:14px}
-  .scale .row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-  .scale .row .lb{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
-    color:var(--ink-faint);width:74px;flex:none}
+  /* type + voice */
+  .scale{display:flex;flex-direction:column;gap:16px}
+  .scale .row{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .scale .lb{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+    color:var(--ink-faint);width:78px;flex:none}
   .d1{font-size:2rem;font-weight:800;line-height:1.1;letter-spacing:-.02em}
-  .d2{font-size:1.375rem;font-weight:700;line-height:1.3}
-  .d3{font-size:1.0625rem;font-weight:400;line-height:1.5;color:var(--ink-soft)}
-  .note{color:var(--ink-soft);font-size:1rem;margin-top:16px}
-  .vlist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+  .d2{font-size:1.3125rem;font-weight:700}
+  .d3{font-size:1.0625rem;font-weight:400;color:var(--ink-soft)}
+  .vlist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
   .vlist li{color:var(--ink-soft);font-size:1rem}
   .vlist b{color:var(--ink);font-weight:700}
+  .note{color:var(--ink-soft);font-size:1rem;margin-top:18px}
   .quote{font-size:1.125rem;font-weight:600;color:var(--ink);
-    border-left:4px solid var(--royal);padding-left:16px;margin-top:18px}
+    border-left:4px solid var(--royal);padding-left:18px;margin-top:20px}
 
-  .scroll{overflow-x:auto}
-  table.t{width:100%;border-collapse:collapse;font-size:1rem;min-width:460px}
-  table.t th,table.t td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--hair)}
-  table.t th{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;color:var(--ink-faint);font-weight:700}
+  /* table */
+  .scroll{overflow-x:auto;border:1px solid var(--hair);border-radius:12px}
+  table.t{width:100%;border-collapse:collapse;font-size:1rem;min-width:520px}
+  table.t th,table.t td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--hair-soft)}
+  table.t tr:last-child td{border-bottom:0}
+  table.t th{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;
+    color:var(--ink-faint);font-weight:700;background:var(--surface)}
   table.t td{color:var(--ink-soft)}
-  table.t td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+  table.t td:first-child{font-weight:700;color:var(--ink)}
 
-  /* KushKations carve-out — the one documented exception */
+  /* carve-out */
   .carve{border:1px solid var(--hair);border-left:5px solid var(--kk-accent);
-    border-radius:10px;padding:24px;background:var(--surface)}
-  .carve-rule{font-size:1.0625rem;color:var(--ink);margin-bottom:20px;line-height:1.5}
+    border-radius:12px;padding:32px;background:var(--surface)}
+  .carve-rule{font-size:1.0625rem;color:var(--ink);margin-bottom:24px}
   .carve-rule b{color:var(--kk-accent);font-weight:700}
-  .carve .card{background:var(--bg)}
-  .carve .sw{background:var(--bg)}
+  .carve .cell,.carve .sw,.carve .scroll{background:var(--bg)}
 
-  /* AA badge list */
-  .aa{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
-  .aa div{display:flex;justify-content:space-between;align-items:center;gap:12px;
-    background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:12px 14px;font-size:.9375rem}
-  .aa div span{color:var(--ink-soft)}
-  .aa div b{color:var(--teal);font-weight:700;font-variant-numeric:tabular-nums}
-
-  .foot{background:var(--navy-900);color:#dbe5f2;margin-top:20px}
-  .foot .in{max-width:1320px;margin:0 auto;padding:62px 32px}
-  .foot h2{color:#fff}
-  .foot .eyebrow{color:#9dc0ff}
-  .foot a{color:#9dc0ff;text-decoration:none;font-weight:600}
+  /* ---------- FOOTER ---------- */
+  .foot{background:var(--navy-900);color:#dbe5f2;padding:64px 0 32px}
+  .foot h4{color:#fff;font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
+  .foot a{color:#9dc0ff;text-decoration:none}
   .foot a:hover{text-decoration:underline}
-  .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;font-size:1rem}
-  .fgrid b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;color:#a8c4e8;margin-bottom:8px}
-  .fine{margin-top:40px;padding-top:20px;border-top:1px solid rgba(219,229,242,.2);
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  .fbrand .logo .name{color:#fff}
+  .fbrand p{margin-top:14px;font-size:1rem;color:#c3d2e6;max-width:36ch}
+  .fnav{display:flex;flex-direction:column;gap:9px;font-size:1rem}
+  .fbar{margin-top:48px;padding-top:24px;border-top:1px solid rgba(219,229,242,.2);
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     font-size:.9375rem;color:#c3d2e6}
 
-  @media (max-width:1100px){
-    .shell{grid-template-columns:var(--rail-w) minmax(0,1fr);gap:32px}
-    .rail.right{display:none}
-    .ramp{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:980px){
+    .grid3{grid-template-columns:repeat(2,1fr)}
+    .swatches{grid-template-columns:repeat(3,1fr)}
+    .fgrid{grid-template-columns:1fr 1fr}
+    .site-nav{display:none}
   }
-  @media (max-width:860px){
-    .shell{grid-template-columns:1fr;padding:0 20px;gap:0}
-    .rail{display:none}
-    .mobar{display:block}
-    .hero-in{padding:0 20px}
-    .hero{padding:68px 0 58px}
-    main section{padding:50px 0}
-    .values,.brands,.cols,.fgrid,.aa{grid-template-columns:1fr}
-    .ramp,.swatches{grid-template-columns:repeat(2,1fr)}
-    .brand.lead{grid-column:auto}
-    .foot .in{padding:50px 20px}
+  @media (max-width:680px){
+    .wrap,.hdr{padding:0 20px}
+    .hero{padding:72px 0 66px}
+    section{padding:60px 0}
+    .grid3,.grid2,.fgrid{grid-template-columns:1fr}
+    .swatches{grid-template-columns:repeat(2,1fr)}
+    .hero-cta .btn{width:100%}
+    .hero-meta{gap:26px}
+    .carve{padding:22px}
   }
 </style>
 
-<div class="toggle" role="group" aria-label="Color theme">
-  <button id="tl" type="button" aria-pressed="false">Light</button>
-  <button id="td" type="button" aria-pressed="false">Dark</button>
-</div>
-
-<header class="hero" id="top">
-  <div class="hero-in">
-    <div class="crest"><span class="mark">C</span> CASHAW&nbsp;MANAGEMENT</div>
-    <p class="eyebrow">Brand Packet &middot; House of Brands</p>
-    <h1>One standard.<br/><em>Every</em> brand we build.</h1>
-    <p class="sub">The identity system behind Cashaw Management and the brands under it, so everything we ship looks, sounds, and feels like us.</p>
-    <p class="tag">Committed to securing your success.</p>
-    <div class="chips">
-      <span>Short-term rentals</span><span>Cleaning &amp; operations</span>
-      <span>Real estate &amp; finance</span><span>Thornton, CO</span><span>v2.0 &middot; Jul 2026</span>
+<!-- ================= STICKY HEADER ================= -->
+<header class="site-header">
+  <div class="hdr">
+    <a class="logo" href="#top">
+      <span class="mark">C</span>
+      <span class="name">CASHAW <span>MANAGEMENT</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#values" data-jump="values">Values</a>
+      <a href="#family" data-jump="family">Brands</a>
+      <a href="#color" data-jump="color">Color</a>
+      <a href="#type" data-jump="type">Type &amp; Voice</a>
+      <a href="#carveout" data-jump="carveout">Carve-Out</a>
+      <a href="#standards" data-jump="standards">Standards</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="tgl" role="group" aria-label="Color theme">
+        <button id="tl" type="button" aria-pressed="false">Light</button>
+        <button id="td" type="button" aria-pressed="false">Dark</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#contact">Contact us</a>
     </div>
   </div>
 </header>
 
-<div class="mobar">
-  <div class="in">
-    <a href="#values" data-jump="values">Values</a>
-    <a href="#family" data-jump="family">Brands</a>
-    <a href="#color" data-jump="color">Color</a>
-    <a href="#type" data-jump="type">Type &amp; Voice</a>
-    <a href="#carveout" data-jump="carveout">KK Carve-Out</a>
-    <a href="#standards" data-jump="standards">Standards</a>
-    <a href="#contact" data-jump="contact">Contact</a>
+<!-- ================= HERO ================= -->
+<section class="hero" id="top" style="border-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Brand Packet &middot; House of Brands</p>
+    <h1>One standard. <em>Every</em> brand we build.</h1>
+    <p class="sub">Cashaw Management runs five brands across short-term rentals, cleaning, and property operations. This packet is the single source of truth for how all of them look, sound, and behave, so a guest, an owner, and a new hire all meet the same company.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#family">Explore the brand family</a>
+      <a class="btn btn-outline" href="#values">Read our core values</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>5</b><span>Brands under one roof</span></div>
+      <div><b>6</b><span>Core values, no exceptions</span></div>
+      <div><b>21</b><span>Properties managed</span></div>
+      <div><b>4.87&#9733;</b><span>Across 1,700+ reviews</span></div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="shell">
-  <aside class="rail left">
-    <h4>Sections</h4>
-    <nav>
-      <a href="#values" data-jump="values"><i class="dot"></i>Core Values</a>
-      <a href="#family" data-jump="family"><i class="dot"></i>Brand Family</a>
-      <a href="#color" data-jump="color"><i class="dot"></i>Color</a>
-      <a href="#type" data-jump="type"><i class="dot"></i>Type &amp; Voice</a>
-      <a href="#carveout" data-jump="carveout"><i class="dot"></i>KK Carve-Out</a>
-      <a href="#standards" data-jump="standards"><i class="dot"></i>Standards</a>
-      <a href="#contact" data-jump="contact"><i class="dot"></i>Contact</a>
-    </nav>
-    <div class="sep"></div>
-    <h4>The Brands</h4>
-    <nav>
-      <a href="#family" data-jump="family"><i class="dot" style="background:var(--b-cashaw);opacity:1"></i>Cashaw Mgmt</a>
-      <a href="#family" data-jump="family"><i class="dot" style="background:var(--b-kk);opacity:1"></i>KushKations</a>
-      <a href="#family" data-jump="family"><i class="dot" style="background:var(--b-aebnb);opacity:1"></i>All Exclusive</a>
-      <a href="#family" data-jump="family"><i class="dot" style="background:var(--b-sameday);opacity:1"></i>Same-Day BNB</a>
-      <a href="#family" data-jump="family"><i class="dot" style="background:var(--b-clearsite);opacity:1"></i>Clearsite</a>
-    </nav>
-    <button class="backtop" type="button" id="btop">&uarr; Back to top</button>
-  </aside>
+<!-- ================= VALUES ================= -->
+<section id="values">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What we stand for</p>
+      <h2>Six core values. Everyone, no exceptions.</h2>
+      <p class="lede">They apply from the founder to the newest cleaner, and every decision gets checked against them. Listed in English and Spanish, because our team is Spanish-first.</p>
+    </div>
+    <div class="grid3">
+      <div class="cell">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 8.1-7 9-4-.9-7-4.6-7-9V6z"/><path d="M9.2 12.2l2 2 3.6-3.9"/></svg></span>
+        <h3>Ownership</h3><span class="sub-es">Responsabilidad</span>
+        <p>If we see it, we solve it. No &ldquo;not my job.&rdquo; Every unit you touch carries your name.</p>
+      </div>
+      <div class="cell">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M5 8h14"/><path d="M7.5 8l-2.5 5h5z"/><path d="M16.5 8l-2.5 5h5z"/><path d="M8 20h8"/></svg></span>
+        <h3>Integrity</h3><span class="sub-es">Integridad</span>
+        <p>Do it right even when nobody checks. An honest &ldquo;not yet&rdquo; beats a fake &ldquo;done.&rdquo;</p>
+      </div>
+      <div class="cell">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 19l6-7 4 4 4-6 4 5"/><path d="M3 19h18"/><circle cx="9" cy="12" r="1.4"/></svg></span>
+        <h3>Persistence</h3><span class="sub-es">Persistencia</span>
+        <p>&ldquo;No&rdquo; is a starting point. We find a way. Encontramos la manera.</p>
+      </div>
+      <div class="cell">
+        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M16 14.4c3 .3 5 2.4 5 5.6"/></svg></span>
+        <h3>Team</h3><span class="sub-es">Equipo</span>
+        <p>Cleaners, maintenance, VAs: we win together. Nobody succeeds alone.</p>
+      </div>
+      <div class="cell">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 9c0-3.3 2.4-6 6-6 0 3.3-2.4 6-6 6z"/><path d="M12 13c0-2.8-2-5-5-5 0 2.8 2 5 5 5z"/><path d="M7 21h10"/></svg></span>
+        <h3>Growth</h3><span class="sub-es">Crecimiento</span>
+        <p>Better than yesterday. We don&rsquo;t repeat errors, we retire them.</p>
+      </div>
+      <div class="cell">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19z"/><path d="M12 17.2s-2.8-1.8-2.8-3.5a1.6 1.6 0 012.8-1 1.6 1.6 0 012.8 1c0 1.7-2.8 3.5-2.8 3.5z"/></svg></span>
+        <h3>Hospitality</h3><span class="sub-es">Hospitalidad</span>
+        <p>Success is measured by the guest experience. The guest feels our work.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section id="values">
-      <div class="head">
-        <p class="eyebrow">What we stand for</p>
-        <h2>Six core values. Everyone, no exceptions.</h2>
-        <p class="lede">They apply from the founder to the newest cleaner, and every decision gets checked against them. Spanish-first, because our team is.</p>
+<!-- ================= BRAND FAMILY ================= -->
+<section id="family">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">The portfolio</p>
+      <h2>A family of brands under one roof.</h2>
+      <p class="lede">Cashaw Management is the parent. Each brand serves a distinct guest, but they all run on the same values, the same operating standard, and one shared palette.</p>
+    </div>
+    <div class="grid3">
+      <div class="cell" style="--accent:var(--b-cashaw)">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9.5 21v-4.5h5V21"/><path d="M9 10h1.5M13.5 10H15"/></svg></span>
+        <span class="role">Parent company</span>
+        <h3>Cashaw Management</h3>
+        <p>The operating company behind the portfolio: rental management, an in-house cleaning company, maintenance, and real-estate and finance operations.</p>
+        <div class="facts"><span>Thornton, CO</span><span>STR + cleaning + finance</span></div>
+        <a class="go" href="mailto:info@cashawmanagement.com">info@cashawmanagement.com &rarr;</a>
       </div>
-      <div class="values">
-        <div class="val"><span class="n">01</span><h3>Ownership <span>Responsabilidad</span></h3><p>If we see it, we solve it. No &ldquo;not my job.&rdquo; Every unit you touch carries your name.</p></div>
-        <div class="val"><span class="n">02</span><h3>Integrity <span>Integridad</span></h3><p>Do it right even when nobody checks. An honest &ldquo;not yet&rdquo; beats a fake &ldquo;done.&rdquo;</p></div>
-        <div class="val"><span class="n">03</span><h3>Persistence <span>Persistencia</span></h3><p>&ldquo;No&rdquo; is a starting point. We find a way. Encontramos la manera.</p></div>
-        <div class="val"><span class="n">04</span><h3>Team <span>Equipo</span></h3><p>Cleaners, maintenance, VAs: we win together. Nobody succeeds alone.</p></div>
-        <div class="val"><span class="n">05</span><h3>Growth <span>Crecimiento</span></h3><p>Better than yesterday. We don&rsquo;t repeat errors, we retire them.</p></div>
-        <div class="val"><span class="n">06</span><h3>Hospitality <span>Hospitalidad</span></h3><p>Success is measured by the guest experience. The guest feels our work.</p></div>
+      <div class="cell" style="--accent:var(--b-kk)">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19z"/><path d="M9.5 20.5V13h5v7.5"/></svg></span>
+        <span class="role">Flagship STR brand</span>
+        <h3>KushKations&trade;</h3>
+        <p>Luxury, judgment-free 420-friendly group stays across Denver and Colorado. Our most developed brand and the reference point for guest experience.</p>
+        <div class="facts"><span>21 properties</span><span>4.87&#9733;</span><span>420-friendly</span></div>
+        <a class="go" href="https://kushkations.com">kushkations.com &rarr;</a>
       </div>
-    </section>
+      <div class="cell" style="--accent:var(--b-aebnb)">
+        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="3.4"/><path d="M10.4 11.6L20 4"/><path d="M17.2 6.5l2 2"/><path d="M14.6 8.6l2 2"/></svg></span>
+        <span class="role">Premium stays</span>
+        <h3>All Exclusive BNB</h3>
+        <p>Exclusive stays for guests who want an elevated, private home base without the cannabis-forward positioning. Same standard, broader audience.</p>
+        <div class="facts"><span>Short-term rentals</span><span>Kit in development</span></div>
+      </div>
+      <div class="cell" style="--accent:var(--b-sameday)">
+        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.4 2"/></svg></span>
+        <span class="role">Fast turnaround</span>
+        <h3>Same-Day BNB</h3>
+        <p>Last-minute and same-day booking stays for travelers who need a great place tonight. Built for speed of booking and turnover.</p>
+        <div class="facts"><span>Instant / same-day</span><span>Kit in development</span></div>
+      </div>
+      <div class="cell" style="--accent:var(--b-clearsite)">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 00-5.3 5.3L4 16v4h4l5.2-5.2a4 4 0 005.3-5.3L16 12l-2.4-.6L13 9z"/></svg></span>
+        <span class="role">Services brand</span>
+        <h3>Clearsite</h3>
+        <p>The services and infrastructure side of the house. Positioning and brand kit to be finalized as the offering is defined.</p>
+        <div class="facts"><span>Services</span><span>Kit in development</span></div>
+      </div>
+      <div class="cell" style="--accent:var(--royal);background:var(--surface)">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+        <span class="role">Next</span>
+        <h3>Room to grow</h3>
+        <p>New ventures inherit this system on day one: the values, the palette, the voice, and the operating standard. Nothing gets built off-brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="family">
-      <div class="head">
-        <p class="eyebrow">The portfolio</p>
-        <h2>A family of brands under one roof.</h2>
-        <p class="lede">Cashaw Management is the parent. Each brand serves a distinct guest, but they all run on the same values, the same operating standard, and one shared palette.</p>
-      </div>
-      <div class="brands">
-        <div class="brand lead" style="--acc:var(--b-cashaw)">
-          <div class="bhead"><span class="logo">C</span><div><h3>Cashaw Management</h3><span class="role">Parent company</span></div></div>
-          <p>The operating company behind the portfolio: short-term rental management, an in-house cleaning company, maintenance, and real-estate and finance operations. Everything below is built and run to the Cashaw standard.</p>
-          <div class="facts"><span>Thornton, CO</span><span>STR + cleaning + finance</span><span>Committed to securing your success</span></div>
-          <a class="go" href="mailto:info@cashawmanagement.com">info@cashawmanagement.com</a>
+<!-- ================= COLOR ================= -->
+<section id="color">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Visual system</p>
+      <h2>High-contrast professional palette.</h2>
+      <p class="lede">Slate navy and crisp white carry the system. Royal blue is the primary action color, teal the secondary. Every brand accent comes from one royal-blue-to-teal ramp, and every text pair clears WCAG AA at 4.5:1 or better.</p>
+    </div>
+
+    <p class="sub-label">Brand accent ramp</p>
+    <div class="swatches" style="grid-template-columns:repeat(5,1fr);margin-bottom:36px">
+      <div class="sw"><div class="c" style="background:#1546c4"></div><div class="t"><b>Cashaw</b><code>#1546c4</code><span class="ratio">7.22:1</span></div></div>
+      <div class="sw"><div class="c" style="background:#0b5aa8"></div><div class="t"><b>KushKations</b><code>#0b5aa8</code><span class="ratio">6.42:1</span></div></div>
+      <div class="sw"><div class="c" style="background:#0a6485"></div><div class="t"><b>All Exclusive</b><code>#0a6485</code><span class="ratio">6.16:1</span></div></div>
+      <div class="sw"><div class="c" style="background:#0f6f74"></div><div class="t"><b>Same-Day</b><code>#0f6f74</code><span class="ratio">5.51:1</span></div></div>
+      <div class="sw"><div class="c" style="background:#155e63"></div><div class="t"><b>Clearsite</b><code>#155e63</code><span class="ratio">6.95:1</span></div></div>
+    </div>
+
+    <p class="sub-label">Core &amp; neutrals</p>
+    <div class="swatches">
+      <div class="sw"><div class="c" style="background:#0b1626"></div><div class="t"><b>Slate Navy 900</b><code>#0b1626</code></div></div>
+      <div class="sw"><div class="c" style="background:#12233a"></div><div class="t"><b>Slate Navy 800</b><code>#12233a</code></div></div>
+      <div class="sw"><div class="c" style="background:#1c3454"></div><div class="t"><b>Slate Navy 700</b><code>#1c3454</code></div></div>
+      <div class="sw"><div class="c" style="background:#41546c"></div><div class="t"><b>Body Ink</b><code>#41546c</code></div></div>
+      <div class="sw"><div class="c" style="background:#cbd6e4"></div><div class="t"><b>Hairline</b><code>#cbd6e4</code></div></div>
+      <div class="sw"><div class="c" style="background:#f7f9fc"></div><div class="t"><b>Surface</b><code>#f7f9fc</code></div></div>
+      <div class="sw"><div class="c" style="background:#ffffff;border-bottom:1px solid var(--hair)"></div><div class="t"><b>Crisp White</b><code>#ffffff</code></div></div>
+      <div class="sw"><div class="c" style="background:#7aa9ff"></div><div class="t"><b>Royal (dark)</b><code>#7aa9ff</code></div></div>
+    </div>
+
+    <p class="sub-label" style="margin-top:36px">Contrast, verified</p>
+    <div class="grid3">
+      <div class="cell" style="padding:22px 24px"><h3 style="font-size:1.75rem;color:var(--teal)">7.75:1</h3><p>Body ink on crisp white</p></div>
+      <div class="cell" style="padding:22px 24px"><h3 style="font-size:1.75rem;color:var(--teal)">18.15:1</h3><p>Heading ink on crisp white</p></div>
+      <div class="cell" style="padding:22px 24px"><h3 style="font-size:1.75rem;color:var(--teal)">7.76:1</h3><p>Royal blue on crisp white</p></div>
+      <div class="cell" style="padding:22px 24px"><h3 style="font-size:1.75rem;color:var(--teal)">16.24:1</h3><p>White on slate navy</p></div>
+      <div class="cell" style="padding:22px 24px"><h3 style="font-size:1.75rem;color:var(--teal)">10.44:1</h3><p>Body ink on navy, dark mode</p></div>
+      <div class="cell" style="padding:22px 24px"><h3 style="font-size:1.75rem;color:var(--teal)">5.39:1</h3><p>Lowest ratio anywhere on the page</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TYPE & VOICE ================= -->
+<section id="type">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Visual system</p>
+      <h2>Typography and voice.</h2>
+      <p class="lede">One sans-serif family across everything: Inter, falling back to Open Sans and system UI. Hierarchy comes from weight and size, never from decorative faces.</p>
+    </div>
+    <div class="grid2">
+      <div class="cell">
+        <h3>Type scale</h3>
+        <div class="scale" style="margin-top:16px">
+          <div class="row"><span class="lb">H1 / 800</span><span class="d1">One standard.</span></div>
+          <div class="row"><span class="lb">H2 / 700</span><span class="d1" style="font-size:1.6rem">Section heading</span></div>
+          <div class="row"><span class="lb">H3 / 700</span><span class="d2">Subsection heading</span></div>
+          <div class="row"><span class="lb">Body / 400</span><span class="d3">17px body copy at 1.5 line height.</span></div>
         </div>
-        <div class="brand" style="--acc:var(--b-kk)">
-          <div class="bhead"><span class="logo">K</span><div><h3>KushKations&trade;</h3><span class="role">Flagship STR brand</span></div></div>
-          <p>Luxury, judgment-free 420-friendly group stays across the Denver and Colorado metro. Our most developed brand and the reference point for guest experience.</p>
-          <div class="facts"><span>21 properties</span><span>4.87&#9733; &middot; 1,700+ reviews</span><span>420-friendly</span></div>
-          <a class="go" href="https://kushkations.com">kushkations.com</a>
-        </div>
-        <div class="brand" style="--acc:var(--b-aebnb)">
-          <div class="bhead"><span class="logo">A</span><div><h3>All&nbsp;Exclusive&nbsp;BNB</h3><span class="role">Premium stays</span></div></div>
-          <p>Exclusive short-term rental stays for guests who want an elevated, private home base without the cannabis-forward positioning. Same operating standard, broader audience.</p>
-          <div class="facts"><span>Short-term rentals</span><span>Brand kit in development</span></div>
-        </div>
-        <div class="brand" style="--acc:var(--b-sameday)">
-          <div class="bhead"><span class="logo">S</span><div><h3>Same-Day BNB</h3><span class="role">Fast turnaround</span></div></div>
-          <p>Last-minute and same-day booking stays for travelers who need a great place tonight. Built for speed of booking and turnover.</p>
-          <div class="facts"><span>Instant / same-day</span><span>Brand kit in development</span></div>
-        </div>
-        <div class="brand" style="--acc:var(--b-clearsite)">
-          <div class="bhead"><span class="logo">C</span><div><h3>Clearsite</h3><span class="role">Services brand</span></div></div>
-          <p>The services and infrastructure side of the house. Positioning and brand kit to be finalized as the offering is defined.</p>
-          <div class="facts"><span>Services</span><span>Brand kit in development</span></div>
-        </div>
+        <p class="note"><b>Rules:</b> headings 32px and up, weight 700 to 800. Body 16 to 18px at 1.5 line height. Eyebrow labels 13px, weight 700, uppercase, wide tracking. No serif, no decorative faces.</p>
       </div>
-    </section>
-
-    <section id="color">
-      <div class="head">
-        <p class="eyebrow">Visual system</p>
-        <h2>High-contrast professional palette.</h2>
-        <p class="lede">Slate navy and crisp white carry the system. Royal blue is the primary action color, teal the secondary. Every brand accent is drawn from one royal-blue-to-teal ramp, and every text pair on this page clears WCAG AA at 4.5:1 or better.</p>
+      <div class="cell">
+        <h3>Voice</h3>
+        <ul class="vlist" style="margin-top:16px">
+          <li><b>Professional, direct, confident.</b> Clear over clever.</li>
+          <li><b>We, not I.</b> First-person plural, always.</li>
+          <li><b>Specific, never generic.</b> Name the guest, the property, the actual ask.</li>
+          <li><b>Team Spanish-first.</b> No em dashes.</li>
+        </ul>
+        <p class="quote">Committed to securing your success.</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <p class="eyebrow" style="color:var(--ink-faint);margin-bottom:11px">Brand accent ramp</p>
-      <div class="ramp">
-        <div class="r"><div class="c" style="background:#1546c4"></div><div class="t"><b>Cashaw</b><code>#1546c4</code><span class="ratio">7.22:1</span></div></div>
-        <div class="r"><div class="c" style="background:#0b5aa8"></div><div class="t"><b>KushKations</b><code>#0b5aa8</code><span class="ratio">6.42:1</span></div></div>
-        <div class="r"><div class="c" style="background:#0a6485"></div><div class="t"><b>All Exclusive</b><code>#0a6485</code><span class="ratio">6.16:1</span></div></div>
-        <div class="r"><div class="c" style="background:#0f6f74"></div><div class="t"><b>Same-Day</b><code>#0f6f74</code><span class="ratio">5.51:1</span></div></div>
-        <div class="r"><div class="c" style="background:#155e63"></div><div class="t"><b>Clearsite</b><code>#155e63</code><span class="ratio">6.95:1</span></div></div>
-      </div>
-
-      <p class="eyebrow" style="color:var(--ink-faint);margin:26px 0 11px">Core &amp; neutrals</p>
-      <div class="swatches">
-        <div class="sw"><div class="c" style="background:#0b1626"></div><div class="t"><b>Slate Navy 900</b><code>#0b1626</code></div></div>
-        <div class="sw"><div class="c" style="background:#12233a"></div><div class="t"><b>Slate Navy 800</b><code>#12233a</code></div></div>
-        <div class="sw"><div class="c" style="background:#1c3454"></div><div class="t"><b>Slate Navy 700</b><code>#1c3454</code></div></div>
-        <div class="sw"><div class="c" style="background:#41546c"></div><div class="t"><b>Body Ink</b><code>#41546c</code></div></div>
-        <div class="sw"><div class="c" style="background:#cbd6e4"></div><div class="t"><b>Hairline</b><code>#cbd6e4</code></div></div>
-        <div class="sw"><div class="c" style="background:#f4f7fb"></div><div class="t"><b>Surface</b><code>#f4f7fb</code></div></div>
-        <div class="sw"><div class="c" style="background:#ffffff;border-bottom:1px solid var(--hair)"></div><div class="t"><b>Crisp White</b><code>#ffffff</code></div></div>
-        <div class="sw"><div class="c" style="background:#7aa9ff"></div><div class="t"><b>Royal (dark mode)</b><code>#7aa9ff</code></div></div>
-      </div>
-
-      <p class="eyebrow" style="color:var(--ink-faint);margin:30px 0 11px">Contrast, verified</p>
-      <div class="aa">
-        <div><span>Body ink on white</span><b>7.75:1</b></div>
-        <div><span>Heading ink on white</span><b>18.15:1</b></div>
-        <div><span>Muted label on white</span><b>5.79:1</b></div>
-        <div><span>Royal blue on white</span><b>7.76:1</b></div>
-        <div><span>Body ink on surface</span><b>7.21:1</b></div>
-        <div><span>White on slate navy</span><b>16.24:1</b></div>
-        <div><span>Body ink on navy (dark)</span><b>10.44:1</b></div>
-        <div><span>Royal on navy (dark)</span><b>7.73:1</b></div>
-      </div>
-    </section>
-
-    <section id="type">
-      <div class="head">
-        <p class="eyebrow">Visual system</p>
-        <h2>Typography &amp; voice.</h2>
-        <p class="lede">One sans-serif family across everything: Inter, falling back to Open Sans and system UI. Hierarchy comes from weight and size, never from decorative faces.</p>
-      </div>
-      <div class="cols">
-        <div class="card">
-          <h3>Type scale</h3>
-          <div class="scale">
-            <div class="row"><span class="lb">H1 / 800</span><span class="d1">One standard.</span></div>
-            <div class="row"><span class="lb">H2 / 700</span><span class="d1" style="font-size:1.75rem">Section heading</span></div>
-            <div class="row"><span class="lb">H3 / 700</span><span class="d2">Subsection heading</span></div>
-            <div class="row"><span class="lb">Body / 400</span><span class="d3">17px body copy set at 1.5 line height for comfortable reading.</span></div>
-          </div>
-          <p class="note"><b>Rules:</b> headings 32px and up, bold 700 to 800. Body 16 to 18px at 1.5 line height. Eyebrow labels 13px, weight 700, uppercase, wide tracking. No serif, no decorative faces.</p>
-        </div>
-        <div class="card">
-          <h3>Voice</h3>
-          <ul class="vlist">
-            <li><b>Professional, direct, confident.</b> Clear over clever.</li>
-            <li><b>We, not I.</b> First-person plural, always.</li>
-            <li><b>Specific, never generic.</b> Name the guest, the property, the actual ask.</li>
-            <li><b>Team Spanish-first.</b> No em dashes.</li>
-          </ul>
-          <p class="quote">Committed to securing your success.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="carveout">
-      <div class="head">
-        <p class="eyebrow">Sub-brand exception</p>
-        <h2>The KushKations carve-out.</h2>
-        <p class="lede">Everything above is the Cashaw corporate system. KushKations is the one documented exception: it keeps its own consumer identity for guest-facing work, because that brand equity is worth protecting rather than overwriting.</p>
-      </div>
-
-      <div class="carve">
-        <p class="carve-rule"><b>The rule.</b> Cashaw slate navy governs corporate, internal, owner, and portfolio-level material. KushKations forest green governs anything a guest sees. When the two meet, Cashaw frames and KushKations leads.</p>
-
-        <div class="scroll">
-          <table class="t">
-            <thead><tr><th>Surface</th><th>Which system</th></tr></thead>
-            <tbody>
-              <tr><td>This packet, corporate site, owner and investor material, internal docs</td><td>Cashaw: slate navy + Inter</td></tr>
-              <tr><td>kushkations.com, OTA listings, property manuals, guest messages, KK social</td><td>KushKations: forest green + Playfair Display</td></tr>
-              <tr><td>Co-branded (a KK property presented under Cashaw management)</td><td>Cashaw navy frame, KK green accents, KK logo leads</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="cols" style="margin-top:22px">
-          <div class="card">
-            <h3>KushKations palette</h3>
-            <div class="swatches" style="grid-template-columns:repeat(2,1fr)">
-              <div class="sw"><div class="c" style="background:#1e3120"></div><div class="t"><b>KK Dark Green</b><code>#1e3120</code></div></div>
-              <div class="sw"><div class="c" style="background:#3d6f42"></div><div class="t"><b>KK Mid Green</b><code>#3d6f42</code></div></div>
-              <div class="sw"><div class="c" style="background:#65bc7b"></div><div class="t"><b>KK Bright Green</b><code>#65bc7b</code></div></div>
-              <div class="sw"><div class="c" style="background:#a8d5b5"></div><div class="t"><b>KK Light Green</b><code>#a8d5b5</code></div></div>
-            </div>
-            <p class="note">Bright green is reserved for calls to action. Never red or orange. In Cashaw corporate contexts KushKations is represented by its ramp blue <code style="font-size:.9375rem">#0b5aa8</code>, not these greens.</p>
-          </div>
-          <div class="card">
-            <h3>KushKations type &amp; voice</h3>
-            <ul class="vlist">
-              <li><b>Playfair Display</b> for headlines, italic for emphasis. <b>Inter</b> for body. This is the only place a serif is permitted.</li>
-              <li><b>Tone:</b> premium, welcoming, laid-back luxury. Warmer than Cashaw corporate.</li>
-              <li><b>Keywords:</b> 420-friendly, cannabis-friendly, luxury, 5-star, Denver, Colorado.</li>
-              <li><b>Sign-off:</b> Kush Kations. Green heart only when celebratory, never on an apology or a review of three stars or below.</li>
-            </ul>
-            <p class="quote">Come Enjoy a KushKation!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="standards">
-      <div class="head">
-        <p class="eyebrow">Operating standard</p>
-        <h2>Guest-facing rules that hold across the portfolio.</h2>
-      </div>
+<!-- ================= CARVE-OUT ================= -->
+<section id="carveout">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Sub-brand exception</p>
+      <h2>The KushKations carve-out.</h2>
+      <p class="lede">Everything above is the Cashaw corporate system. KushKations is the one documented exception: it keeps its own consumer identity for guest-facing work, because that brand equity is worth protecting rather than overwriting.</p>
+    </div>
+    <div class="carve">
+      <p class="carve-rule"><b>The rule.</b> Cashaw slate navy governs corporate, internal, owner, and portfolio-level material. KushKations forest green governs anything a guest sees. When the two meet, Cashaw frames and KushKations leads.</p>
       <div class="scroll">
         <table class="t">
-          <thead><tr><th>Standard</th><th>Detail</th></tr></thead>
+          <thead><tr><th>Surface</th><th>Which system</th></tr></thead>
           <tbody>
-            <tr><td>Check-in / checkout</td><td>4:00 PM in, 10:00 AM out</td></tr>
-            <tr><td>House rules</td><td>Pets OK, indoor smoking OK at most homes, 21+ to book</td></tr>
-            <tr><td>Early check-in</td><td>$50 from noon to 2:59 PM &middot; free 3:00 to 3:59 PM &middot; before noon by approval</td></tr>
-            <tr><td>Late checkout</td><td>$50 until noon &middot; $100 until 2 PM &middot; after 2 PM is a full extra night</td></tr>
-            <tr><td>Sign-off</td><td>Kush Kations &middot; green heart only when celebratory</td></tr>
-            <tr><td>Direct booking</td><td>Code KUSHSAVE (5% off) &middot; 1-800-880-2157</td></tr>
+            <tr><td>This packet, corporate site, owner and investor material, internal docs</td><td>Cashaw: slate navy + Inter</td></tr>
+            <tr><td>kushkations.com, OTA listings, property manuals, guest messages, KK social</td><td>KushKations: forest green + Playfair Display</td></tr>
+            <tr><td>Co-branded (a KK property presented under Cashaw management)</td><td>Cashaw navy frame, KK green accents, KK logo leads</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
-  </main>
-
-  <aside class="rail right">
-    <h4>Quick links</h4>
-    <div class="qbox">
-      <a href="https://kushkations.com"><b>KushKations.com</b><span>Flagship booking site</span></a>
-      <a href="https://kushkations.github.io/kk-core-values/"><b>Core Values page</b><span>Bilingual, team-facing</span></a>
-      <a href="mailto:info@cashawmanagement.com"><b>Email Cashaw</b><span>info@cashawmanagement.com</span></a>
-      <a href="mailto:info@kushkations.com"><b>Email KushKations</b><span>info@kushkations.com</span></a>
-      <a href="tel:18008802157"><b>1-800-880-2157</b><span>Direct booking line</span></a>
+      <div class="grid2" style="margin-top:24px">
+        <div class="cell">
+          <h3>KushKations palette</h3>
+          <div class="swatches" style="grid-template-columns:repeat(2,1fr);margin-top:16px">
+            <div class="sw"><div class="c" style="background:#1e3120"></div><div class="t"><b>KK Dark Green</b><code>#1e3120</code></div></div>
+            <div class="sw"><div class="c" style="background:#3d6f42"></div><div class="t"><b>KK Mid Green</b><code>#3d6f42</code></div></div>
+            <div class="sw"><div class="c" style="background:#65bc7b"></div><div class="t"><b>KK Bright Green</b><code>#65bc7b</code></div></div>
+            <div class="sw"><div class="c" style="background:#a8d5b5"></div><div class="t"><b>KK Light Green</b><code>#a8d5b5</code></div></div>
+          </div>
+          <p class="note">Bright green is reserved for calls to action. Never red or orange. In Cashaw corporate contexts KushKations is represented by its ramp blue <code>#0b5aa8</code>, not these greens.</p>
+        </div>
+        <div class="cell">
+          <h3>KushKations type and voice</h3>
+          <ul class="vlist" style="margin-top:16px">
+            <li><b>Playfair Display</b> for headlines, italic for emphasis. <b>Inter</b> for body. The only place a serif is permitted.</li>
+            <li><b>Tone:</b> premium, welcoming, laid-back luxury. Warmer than Cashaw corporate.</li>
+            <li><b>Keywords:</b> 420-friendly, cannabis-friendly, luxury, 5-star, Denver, Colorado.</li>
+            <li><b>Sign-off:</b> Kush Kations. Green heart only when celebratory, never on an apology or a review of three stars or below.</li>
+          </ul>
+          <p class="quote" style="border-left-color:var(--kk-accent)">Come Enjoy a KushKation!</p>
+        </div>
+      </div>
     </div>
-    <div class="sep"></div>
-    <h4>At a glance</h4>
-    <div class="qbox">
-      <a href="#family" data-jump="family"><b>5 brands</b><span>1 parent, 4 under it</span></a>
-      <a href="#values" data-jump="values"><b>6 core values</b><span>Everyone, no exceptions</span></a>
-      <a href="#standards" data-jump="standards"><b>4 PM / 10 AM</b><span>Check-in / checkout</span></a>
-    </div>
-  </aside>
-</div>
+  </div>
+</section>
 
+<!-- ================= STANDARDS ================= -->
+<section id="standards">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Operating standard</p>
+      <h2>Guest-facing rules that hold across the portfolio.</h2>
+    </div>
+    <div class="scroll">
+      <table class="t">
+        <thead><tr><th>Standard</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Check-in / checkout</td><td>4:00 PM in, 10:00 AM out</td></tr>
+          <tr><td>House rules</td><td>Pets OK, indoor smoking OK at most homes, 21+ to book</td></tr>
+          <tr><td>Early check-in</td><td>$50 from noon to 2:59 PM &middot; free 3:00 to 3:59 PM &middot; before noon by approval</td></tr>
+          <tr><td>Late checkout</td><td>$50 until noon &middot; $100 until 2 PM &middot; after 2 PM is a full extra night</td></tr>
+          <tr><td>Sign-off</td><td>Kush Kations &middot; green heart only when celebratory</td></tr>
+          <tr><td>Direct booking</td><td>Code KUSHSAVE (5% off) &middot; 1-800-880-2157</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer class="foot" id="contact">
-  <div class="in">
-    <p class="eyebrow">Get in touch</p>
-    <h2>One point of contact for anything brand.</h2>
+  <div class="wrap">
     <div class="fgrid">
-      <div><b>Cashaw Management</b>500 E. 84th Ave, Suite A1<br/>Thornton, CO 80229<br/><a href="mailto:info@cashawmanagement.com">info@cashawmanagement.com</a></div>
-      <div><b>KushKations</b><a href="https://kushkations.com">kushkations.com</a><br/><a href="mailto:info@kushkations.com">info@kushkations.com</a><br/>1-800-880-2157</div>
-      <div><b>Live brand assets</b><a href="https://kushkations.github.io/kk-core-values/">Core values page</a></div>
+      <div class="fbrand">
+        <a class="logo" href="#top">
+          <span class="mark">C</span>
+          <span class="name" style="color:#fff">CASHAW <span style="color:#a8c4e8">MANAGEMENT</span></span>
+        </a>
+        <p>Short-term rental management, cleaning, and property operations. Committed to securing your success.</p>
+        <p style="margin-top:16px;color:#c3d2e6">500 E. 84th Ave, Suite A1<br/>Thornton, CO 80229</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <nav class="fnav">
+          <a href="#values">Core Values</a>
+          <a href="#family">Brand Family</a>
+          <a href="#color">Color</a>
+          <a href="#type">Type &amp; Voice</a>
+          <a href="#carveout">KushKations Carve-Out</a>
+          <a href="#standards">Operating Standards</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <nav class="fnav">
+          <a href="mailto:info@cashawmanagement.com">info@cashawmanagement.com</a>
+          <a href="mailto:info@kushkations.com">info@kushkations.com</a>
+          <a href="tel:18008802157">1-800-880-2157</a>
+          <a href="https://kushkations.com">kushkations.com</a>
+          <a href="https://kushkations.github.io/kk-core-values/">Core Values page</a>
+        </nav>
+      </div>
     </div>
-    <p class="fine">Cashaw Management &middot; House of Brands. KushKations.com is a registered trademark. Keep this packet in sync with the live sites and the core-values page. &copy; 2026 Cashaw Management.</p>
+    <div class="fbar">
+      <span>&copy; 2026 Cashaw Management. All rights reserved.</span>
+      <span>KushKations.com is a registered trademark. Brand Packet v3.0.</span>
+    </div>
   </div>
 </footer>
 
@@ -565,10 +563,8 @@
   tl.addEventListener('click',function(){root.setAttribute('data-theme','light');sync();});
   td.addEventListener('click',function(){root.setAttribute('data-theme','dark');sync();});
   sync();
-  document.getElementById('btop').addEventListener('click',function(){
-    window.scrollTo({top:0,behavior:'smooth'});
-  });
-  var ids=['values','family','color','type','carveout','standards','contact'];
+
+  var ids=['values','family','color','type','carveout','standards'];
   var links=Array.prototype.slice.call(document.querySelectorAll('[data-jump]'));
   function mark(id){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('data-jump')===id);});}
   var seen={};
@@ -577,7 +573,7 @@
     var best=null,bv=0;
     ids.forEach(function(id){if((seen[id]||0)>bv){bv=seen[id];best=id;}});
     if(best)mark(best);
-  },{rootMargin:'-15% 0px -55% 0px',threshold:[0,.15,.4,.75,1]});
+  },{rootMargin:'-20% 0px -55% 0px',threshold:[0,.15,.4,.75,1]});
   ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
 })();
 </script>
