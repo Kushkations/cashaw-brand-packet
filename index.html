@@ -11,8 +11,9 @@
     --navy-900:#0b1626; --navy-800:#12233a; --navy-700:#1c3454;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
     --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
-    --b-cashaw:#1546c4; --b-kk:#0b5aa8; --b-aebnb:#0a6485;
-    --b-sameday:#0f6f74; --b-clearsite:#155e63;
+    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0a6485;
+    --b-sameday:#0f6f74; --b-clearsite:#a34a05;
+    --cs-fill:#f97316; --cs-black:#0b0b0b;
     --kk-accent:#3d6f42;
     --focus:#1546c4;
     --header-h:70px;
@@ -23,8 +24,9 @@
       --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160; --hair-soft:#213550;
       --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
       --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
-      --b-cashaw:#7aa9ff; --b-kk:#6fb6f2; --b-aebnb:#57c3dd;
-      --b-sameday:#4fd1c5; --b-clearsite:#5fcfc2;
+      --b-cashaw:#7aa9ff; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
+      --b-sameday:#4fd1c5; --b-clearsite:#fb923c;
+      --cs-fill:#fb923c; --cs-black:#0b0b0b;
       --kk-accent:#65bc7b; --focus:#7aa9ff;
     }
   }
@@ -32,16 +34,18 @@
     --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160; --hair-soft:#213550;
     --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
     --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
-    --b-cashaw:#7aa9ff; --b-kk:#6fb6f2; --b-aebnb:#57c3dd;
-    --b-sameday:#4fd1c5; --b-clearsite:#5fcfc2;
+    --b-cashaw:#7aa9ff; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
+    --b-sameday:#4fd1c5; --b-clearsite:#fb923c;
+    --cs-fill:#fb923c; --cs-black:#0b0b0b;
     --kk-accent:#65bc7b; --focus:#7aa9ff;
   }
   :root[data-theme="light"]{
     --bg:#ffffff; --surface:#f7f9fc; --surface-2:#eef3f9; --hair:#cbd6e4; --hair-soft:#dde5ef;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
     --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
-    --b-cashaw:#1546c4; --b-kk:#0b5aa8; --b-aebnb:#0a6485;
-    --b-sameday:#0f6f74; --b-clearsite:#155e63;
+    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0a6485;
+    --b-sameday:#0f6f74; --b-clearsite:#a34a05;
+    --cs-fill:#f97316; --cs-black:#0b0b0b;
     --kk-accent:#3d6f42; --focus:#1546c4;
   }
 
@@ -188,6 +192,12 @@
   :root[data-theme="dark"] .icon{
     background:color-mix(in srgb, var(--accent,var(--royal)) 20%, var(--bg));
     border-color:color-mix(in srgb, var(--accent,var(--royal)) 38%, var(--bg))}
+
+  /* Clearsite runs orange on black */
+  .cell.cs .icon{background:var(--cs-black);border-color:var(--cs-black);color:#fb923c}
+  .rampband .rb.cs{background:var(--cs-fill);color:var(--cs-black)}
+  .rampband .rb.cs b,.rampband .rb.cs span{color:var(--cs-black)}
+  .rampband .rb.cs span{opacity:.78}
 
   /* cards gain an accent edge + lift on hover */
   .cell{position:relative;transition:border-color .16s,transform .16s}
@@ -372,10 +382,10 @@
 
 <div class="rampband" aria-label="Brand accent ramp">
   <div class="rb" style="--c:#1546c4"><b>Cashaw Management</b><span>#1546c4</span></div>
-  <div class="rb" style="--c:#0b5aa8"><b>KushKations</b><span>#0b5aa8</span></div>
+  <div class="rb" style="--c:#3d6f42"><b>KushKations</b><span>#3d6f42</span></div>
   <div class="rb" style="--c:#0a6485"><b>All Exclusive BNB</b><span>#0a6485</span></div>
   <div class="rb" style="--c:#0f6f74"><b>Same-Day BNB</b><span>#0f6f74</span></div>
-  <div class="rb" style="--c:#155e63"><b>Clearsite</b><span>#155e63</span></div>
+  <div class="rb cs" style="--c:#f97316"><b>Clearsite</b><span>#f97316 / #0b0b0b</span></div>
 </div>
 
 <div class="shell">
@@ -486,11 +496,11 @@
         <p>Last-minute and same-day booking stays for travelers who need a great place tonight. Built for speed of booking and turnover.</p>
         <div class="facts"><span>Instant / same-day</span><span>Kit in development</span></div>
       </div>
-      <div class="cell" style="--accent:var(--b-clearsite)">
+      <div class="cell cs" style="--accent:var(--b-clearsite)">
         <span class="icon"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 00-5.3 5.3L4 16v4h4l5.2-5.2a4 4 0 005.3-5.3L16 12l-2.4-.6L13 9z"/></svg></span>
         <span class="role">Services brand</span>
         <h3>Clearsite</h3>
-        <p>The services and infrastructure side of the house. Positioning and brand kit to be finalized as the offering is defined.</p>
+        <p>The services and infrastructure side of the house. Runs its own orange-on-black identity, the one brand that steps outside the corporate blue range.</p>
         <div class="facts"><span>Services</span><span>Kit in development</span></div>
       </div>
       <div class="cell" style="--accent:var(--royal);background:var(--surface)">
@@ -509,16 +519,16 @@
     <div class="head">
       <p class="eyebrow">Visual system</p>
       <h2>High-contrast professional palette.</h2>
-      <p class="lede">Slate navy and crisp white carry the system. Royal blue is the primary action color, teal the secondary. Every brand accent comes from one royal-blue-to-teal ramp, and every text pair clears WCAG AA at 4.5:1 or better.</p>
+      <p class="lede">Slate navy and crisp white carry the corporate system, with royal blue as the primary action color. Each brand then carries its own accent: KushKations green, All Exclusive and Same-Day in the blue-to-teal range, and Clearsite in orange on black. Every value on this page clears WCAG AA at 4.5:1 or better.</p>
     </div>
 
-    <p class="sub-label">Brand accent ramp</p>
+    <p class="sub-label">Brand accents</p>
     <div class="swatches" style="grid-template-columns:repeat(5,1fr);margin-bottom:36px">
       <div class="sw"><div class="c" style="background:#1546c4"></div><div class="t"><b>Cashaw</b><code>#1546c4</code><span class="ratio">7.22:1</span></div></div>
-      <div class="sw"><div class="c" style="background:#0b5aa8"></div><div class="t"><b>KushKations</b><code>#0b5aa8</code><span class="ratio">6.42:1</span></div></div>
+      <div class="sw"><div class="c" style="background:#3d6f42"></div><div class="t"><b>KushKations</b><code>#3d6f42</code><span class="ratio">5.61:1</span></div></div>
       <div class="sw"><div class="c" style="background:#0a6485"></div><div class="t"><b>All Exclusive</b><code>#0a6485</code><span class="ratio">6.16:1</span></div></div>
       <div class="sw"><div class="c" style="background:#0f6f74"></div><div class="t"><b>Same-Day</b><code>#0f6f74</code><span class="ratio">5.51:1</span></div></div>
-      <div class="sw"><div class="c" style="background:#155e63"></div><div class="t"><b>Clearsite</b><code>#155e63</code><span class="ratio">6.95:1</span></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#f97316 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Clearsite</b><code>#f97316 / #0b0b0b</code><span class="ratio">7.02:1</span></div></div>
     </div>
 
     <p class="sub-label">Core &amp; neutrals</p>
@@ -607,7 +617,7 @@
             <div class="sw"><div class="c" style="background:#65bc7b"></div><div class="t"><b>KK Bright Green</b><code>#65bc7b</code></div></div>
             <div class="sw"><div class="c" style="background:#a8d5b5"></div><div class="t"><b>KK Light Green</b><code>#a8d5b5</code></div></div>
           </div>
-          <p class="note">Bright green is reserved for calls to action. Never red or orange. In Cashaw corporate contexts KushKations is represented by its ramp blue <code>#0b5aa8</code>, not these greens.</p>
+          <p class="note">Bright green is reserved for calls to action. KushKations now carries green in Cashaw corporate contexts too, so the packet and the consumer brand finally agree on color. The carve-out below is about typography and tone, not palette.</p>
         </div>
         <div class="cell">
           <h3>KushKations type and voice</h3>
