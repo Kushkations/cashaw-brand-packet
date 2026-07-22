@@ -37,6 +37,7 @@
     --b-clearsite:#155e63;
 
     --focus:#1546c4;
+    --kk-accent:#3d6f42;   /* KK carve-out, 5.50:1 on surface */
     --shadow:0 1px 2px rgba(11,22,38,.06),0 12px 30px -14px rgba(11,22,38,.28);
     --sans:"Inter","Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     --rail-w:212px; --rail-w2:224px;
@@ -54,6 +55,7 @@
       --b-cashaw:#7aa9ff; --b-kk:#6fb6f2; --b-aebnb:#57c3dd;
       --b-sameday:#4fd1c5; --b-clearsite:#5fcfc2;
       --focus:#7aa9ff;
+      --kk-accent:#65bc7b;   /* 6.81:1 on dark surface */
       --shadow:0 1px 2px rgba(0,0,0,.45),0 16px 36px -16px rgba(0,0,0,.75);
     }
   }
@@ -64,6 +66,7 @@
     --b-cashaw:#7aa9ff; --b-kk:#6fb6f2; --b-aebnb:#57c3dd;
     --b-sameday:#4fd1c5; --b-clearsite:#5fcfc2;
     --focus:#7aa9ff;
+    --kk-accent:#65bc7b;
     --shadow:0 1px 2px rgba(0,0,0,.45),0 16px 36px -16px rgba(0,0,0,.75);
   }
   :root[data-theme="light"]{
@@ -73,6 +76,7 @@
     --b-cashaw:#1546c4; --b-kk:#0b5aa8; --b-aebnb:#0a6485;
     --b-sameday:#0f6f74; --b-clearsite:#155e63;
     --focus:#1546c4;
+    --kk-accent:#3d6f42;
     --shadow:0 1px 2px rgba(11,22,38,.06),0 12px 30px -14px rgba(11,22,38,.28);
   }
 
@@ -226,6 +230,14 @@
   table.t td{color:var(--ink-soft)}
   table.t td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
 
+  /* KushKations carve-out — the one documented exception */
+  .carve{border:1px solid var(--hair);border-left:5px solid var(--kk-accent);
+    border-radius:10px;padding:24px;background:var(--surface)}
+  .carve-rule{font-size:1.0625rem;color:var(--ink);margin-bottom:20px;line-height:1.5}
+  .carve-rule b{color:var(--kk-accent);font-weight:700}
+  .carve .card{background:var(--bg)}
+  .carve .sw{background:var(--bg)}
+
   /* AA badge list */
   .aa{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
   .aa div{display:flex;justify-content:space-between;align-items:center;gap:12px;
@@ -288,6 +300,7 @@
     <a href="#family" data-jump="family">Brands</a>
     <a href="#color" data-jump="color">Color</a>
     <a href="#type" data-jump="type">Type &amp; Voice</a>
+    <a href="#carveout" data-jump="carveout">KK Carve-Out</a>
     <a href="#standards" data-jump="standards">Standards</a>
     <a href="#contact" data-jump="contact">Contact</a>
   </div>
@@ -301,6 +314,7 @@
       <a href="#family" data-jump="family"><i class="dot"></i>Brand Family</a>
       <a href="#color" data-jump="color"><i class="dot"></i>Color</a>
       <a href="#type" data-jump="type"><i class="dot"></i>Type &amp; Voice</a>
+      <a href="#carveout" data-jump="carveout"><i class="dot"></i>KK Carve-Out</a>
       <a href="#standards" data-jump="standards"><i class="dot"></i>Standards</a>
       <a href="#contact" data-jump="contact"><i class="dot"></i>Contact</a>
     </nav>
@@ -441,6 +455,52 @@
       </div>
     </section>
 
+    <section id="carveout">
+      <div class="head">
+        <p class="eyebrow">Sub-brand exception</p>
+        <h2>The KushKations carve-out.</h2>
+        <p class="lede">Everything above is the Cashaw corporate system. KushKations is the one documented exception: it keeps its own consumer identity for guest-facing work, because that brand equity is worth protecting rather than overwriting.</p>
+      </div>
+
+      <div class="carve">
+        <p class="carve-rule"><b>The rule.</b> Cashaw slate navy governs corporate, internal, owner, and portfolio-level material. KushKations forest green governs anything a guest sees. When the two meet, Cashaw frames and KushKations leads.</p>
+
+        <div class="scroll">
+          <table class="t">
+            <thead><tr><th>Surface</th><th>Which system</th></tr></thead>
+            <tbody>
+              <tr><td>This packet, corporate site, owner and investor material, internal docs</td><td>Cashaw: slate navy + Inter</td></tr>
+              <tr><td>kushkations.com, OTA listings, property manuals, guest messages, KK social</td><td>KushKations: forest green + Playfair Display</td></tr>
+              <tr><td>Co-branded (a KK property presented under Cashaw management)</td><td>Cashaw navy frame, KK green accents, KK logo leads</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cols" style="margin-top:22px">
+          <div class="card">
+            <h3>KushKations palette</h3>
+            <div class="swatches" style="grid-template-columns:repeat(2,1fr)">
+              <div class="sw"><div class="c" style="background:#1e3120"></div><div class="t"><b>KK Dark Green</b><code>#1e3120</code></div></div>
+              <div class="sw"><div class="c" style="background:#3d6f42"></div><div class="t"><b>KK Mid Green</b><code>#3d6f42</code></div></div>
+              <div class="sw"><div class="c" style="background:#65bc7b"></div><div class="t"><b>KK Bright Green</b><code>#65bc7b</code></div></div>
+              <div class="sw"><div class="c" style="background:#a8d5b5"></div><div class="t"><b>KK Light Green</b><code>#a8d5b5</code></div></div>
+            </div>
+            <p class="note">Bright green is reserved for calls to action. Never red or orange. In Cashaw corporate contexts KushKations is represented by its ramp blue <code style="font-size:.9375rem">#0b5aa8</code>, not these greens.</p>
+          </div>
+          <div class="card">
+            <h3>KushKations type &amp; voice</h3>
+            <ul class="vlist">
+              <li><b>Playfair Display</b> for headlines, italic for emphasis. <b>Inter</b> for body. This is the only place a serif is permitted.</li>
+              <li><b>Tone:</b> premium, welcoming, laid-back luxury. Warmer than Cashaw corporate.</li>
+              <li><b>Keywords:</b> 420-friendly, cannabis-friendly, luxury, 5-star, Denver, Colorado.</li>
+              <li><b>Sign-off:</b> Kush Kations. Green heart only when celebratory, never on an apology or a review of three stars or below.</li>
+            </ul>
+            <p class="quote">Come Enjoy a KushKation!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="standards">
       <div class="head">
         <p class="eyebrow">Operating standard</p>
@@ -508,7 +568,7 @@
   document.getElementById('btop').addEventListener('click',function(){
     window.scrollTo({top:0,behavior:'smooth'});
   });
-  var ids=['values','family','color','type','standards','contact'];
+  var ids=['values','family','color','type','carveout','standards','contact'];
   var links=Array.prototype.slice.call(document.querySelectorAll('[data-jump]'));
   function mark(id){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('data-jump')===id);});}
   var seen={};
