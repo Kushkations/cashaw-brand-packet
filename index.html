@@ -11,9 +11,9 @@
     --navy-900:#0b1626; --navy-800:#12233a; --navy-700:#1c3454;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
     --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
-    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0a6485;
-    --b-sameday:#0f6f74; --b-clearsite:#a34a05;
-    --cs-fill:#f97316; --cs-black:#0b0b0b;
+    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0f6a7d;
+    --b-sameday:#7a5a06; --b-clearsite:#a34a05;
+    --cs-fill:#f97316; --cs-black:#0b0b0b; --sd-gold:#d4a017;
     --kk-accent:#3d6f42;
     --focus:#1546c4;
     --header-h:70px;
@@ -25,7 +25,7 @@
       --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
       --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
       --b-cashaw:#7aa9ff; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
-      --b-sameday:#4fd1c5; --b-clearsite:#fb923c;
+      --b-sameday:#e8b93a; --b-clearsite:#fb923c;
       --cs-fill:#fb923c; --cs-black:#0b0b0b;
       --kk-accent:#65bc7b; --focus:#7aa9ff;
     }
@@ -35,7 +35,7 @@
     --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
     --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
     --b-cashaw:#7aa9ff; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
-    --b-sameday:#4fd1c5; --b-clearsite:#fb923c;
+    --b-sameday:#e8b93a; --b-clearsite:#fb923c;
     --cs-fill:#fb923c; --cs-black:#0b0b0b;
     --kk-accent:#65bc7b; --focus:#7aa9ff;
   }
@@ -43,8 +43,8 @@
     --bg:#ffffff; --surface:#f7f9fc; --surface-2:#eef3f9; --hair:#cbd6e4; --hair-soft:#dde5ef;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
     --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
-    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0a6485;
-    --b-sameday:#0f6f74; --b-clearsite:#a34a05;
+    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0f6a7d;
+    --b-sameday:#7a5a06; --b-clearsite:#a34a05;
     --cs-fill:#f97316; --cs-black:#0b0b0b;
     --kk-accent:#3d6f42; --focus:#1546c4;
   }
@@ -193,11 +193,25 @@
     background:color-mix(in srgb, var(--accent,var(--royal)) 20%, var(--bg));
     border-color:color-mix(in srgb, var(--accent,var(--royal)) 38%, var(--bg))}
 
+  /* real brand marks sit on a white chip so every logo reads in both themes */
+  .logochip{background:#ffffff;border:1px solid var(--hair);border-radius:10px;
+    padding:10px 14px;height:78px;width:fit-content;max-width:100%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+  .logochip img{height:100%;width:auto;max-width:190px;object-fit:contain;display:block}
+  .hero-logo{height:52px;width:auto;display:block;margin-bottom:26px}
+  .foot-logo{height:40px;width:auto;display:block;margin-bottom:14px}
+  .grouplabel{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;
+    color:var(--ink-faint);margin:34px 0 16px;display:flex;align-items:center;gap:12px}
+  .grouplabel::after{content:"";flex:1;height:1px;background:var(--hair)}
+
   /* Clearsite runs orange on black */
   .cell.cs .icon{background:var(--cs-black);border-color:var(--cs-black);color:#fb923c}
   .rampband .rb.cs{background:var(--cs-fill);color:var(--cs-black)}
   .rampband .rb.cs b,.rampband .rb.cs span{color:var(--cs-black)}
   .rampband .rb.cs span{opacity:.78}
+  .rampband .rb.sd{background:var(--sd-gold);color:#0b0b0b}
+  .rampband .rb.sd b,.rampband .rb.sd span{color:#0b0b0b}
+  .rampband .rb.sd span{opacity:.78}
 
   /* cards gain an accent edge + lift on hover */
   .cell{position:relative;transition:border-color .16s,transform .16s}
@@ -363,6 +377,7 @@
 <!-- ================= HERO ================= -->
 <section class="hero" id="top" style="border-top:0">
   <div class="wrap">
+    <img class="hero-logo" src="assets/cashaw-logo.png" alt="Cashaw Management Inc. logo"/>
     <p class="eyebrow">Brand Packet &middot; House of Brands</p>
     <h1>One standard. <em>Every</em> brand we build.</h1>
     <p class="sub">Cashaw Management runs five brands across short-term rentals, cleaning, and property operations. This packet is the single source of truth for how all of them look, sound, and behave, so a guest, an owner, and a new hire all meet the same company.</p>
@@ -383,8 +398,8 @@
 <div class="rampband" aria-label="Brand accent ramp">
   <div class="rb" style="--c:#1546c4"><b>Cashaw Management</b><span>#1546c4</span></div>
   <div class="rb" style="--c:#3d6f42"><b>KushKations</b><span>#3d6f42</span></div>
-  <div class="rb" style="--c:#0a6485"><b>All Exclusive BNB</b><span>#0a6485</span></div>
-  <div class="rb" style="--c:#0f6f74"><b>Same-Day BNB</b><span>#0f6f74</span></div>
+  <div class="rb" style="--c:#0f6a7d"><b>All Exclusive BNB</b><span>#0f6a7d</span></div>
+  <div class="rb sd" style="--c:#d4a017"><b>Same-Day BNB Cleaners</b><span>#d4a017 / #0b0b0b</span></div>
   <div class="rb cs" style="--c:#f97316"><b>Clearsite</b><span>#f97316 / #0b0b0b</span></div>
 </div>
 
@@ -463,53 +478,58 @@
     <div class="head">
       <p class="eyebrow">The portfolio</p>
       <h2>A family of brands under one roof.</h2>
-      <p class="lede">Cashaw Management is the parent. Each brand serves a distinct guest, but they all run on the same values, the same operating standard, and one shared palette.</p>
+      <p class="lede">Cashaw Management Inc. is the parent. Two brands host guests, two sell cleaning outward. All five are active businesses, and they run on the same values and the same operating standard.</p>
     </div>
+
     <div class="grid3">
-      <div class="cell" style="--accent:var(--b-cashaw)">
-        <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9.5 21v-4.5h5V21"/><path d="M9 10h1.5M13.5 10H15"/></svg></span>
+      <div class="cell" style="--accent:var(--b-cashaw);grid-column:1/-1">
+        <span class="logochip"><img src="assets/cashaw-logo.png" alt="Cashaw Management Inc. logo"/></span>
         <span class="role">Parent company</span>
-        <h3>Cashaw Management</h3>
-        <p>The operating company behind the portfolio: rental management, an in-house cleaning company, maintenance, and real-estate and finance operations.</p>
-        <div class="facts"><span>Thornton, CO</span><span>STR + cleaning + finance</span></div>
+        <h3>Cashaw Management Inc.</h3>
+        <p>The operating company behind the portfolio: short-term rental management, in-house cleaning and maintenance, and real-estate and finance operations. Everything below is built and run to the Cashaw standard.</p>
+        <div class="facts"><span>Thornton, CO</span><span>STR + cleaning + finance</span><span>Committed to securing your success</span></div>
         <a class="go" href="mailto:info@cashawmanagement.com">info@cashawmanagement.com &rarr;</a>
       </div>
+    </div>
+
+    <p class="grouplabel">Stays &middot; guest facing</p>
+    <div class="grid2">
       <div class="cell" style="--accent:var(--b-kk)">
-        <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19z"/><path d="M9.5 20.5V13h5v7.5"/></svg></span>
-        <span class="role">Flagship STR brand</span>
+        <span class="logochip"><img src="assets/kushkations-logo.png" alt="KushKations logo"/></span>
+        <span class="role">Flagship stays brand</span>
         <h3>KushKations&trade;</h3>
         <p>Luxury, judgment-free 420-friendly group stays across Denver and Colorado. Our most developed brand and the reference point for guest experience.</p>
-        <div class="facts"><span>21 properties</span><span>4.87&#9733;</span><span>420-friendly</span></div>
+        <div class="facts"><span>21 properties</span><span>4.87&#9733; &middot; 1,700+ reviews</span><span>420-friendly</span></div>
         <a class="go" href="https://kushkations.com">kushkations.com &rarr;</a>
       </div>
       <div class="cell" style="--accent:var(--b-aebnb)">
-        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="3.4"/><path d="M10.4 11.6L20 4"/><path d="M17.2 6.5l2 2"/><path d="M14.6 8.6l2 2"/></svg></span>
-        <span class="role">Premium stays</span>
+        <span class="logochip"><img src="assets/allexclusive-logo.png" alt="All Exclusive BNB logo"/></span>
+        <span class="role">Sister stays brand</span>
         <h3>All Exclusive BNB</h3>
-        <p>Exclusive stays for guests who want an elevated, private home base without the cannabis-forward positioning. Same standard, broader audience.</p>
-        <div class="facts"><span>Short-term rentals</span><span>Kit in development</span></div>
-      </div>
-      <div class="cell" style="--accent:var(--b-sameday)">
-        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.4 2"/></svg></span>
-        <span class="role">Fast turnaround</span>
-        <h3>Same-Day BNB</h3>
-        <p>Last-minute and same-day booking stays for travelers who need a great place tonight. Built for speed of booking and turnover.</p>
-        <div class="facts"><span>Instant / same-day</span><span>Kit in development</span></div>
-      </div>
-      <div class="cell cs" style="--accent:var(--b-clearsite)">
-        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 00-5.3 5.3L4 16v4h4l5.2-5.2a4 4 0 005.3-5.3L16 12l-2.4-.6L13 9z"/></svg></span>
-        <span class="role">Services brand</span>
-        <h3>Clearsite</h3>
-        <p>The services and infrastructure side of the house. Runs its own orange-on-black identity, the one brand that steps outside the corporate blue range.</p>
-        <div class="facts"><span>Services</span><span>Kit in development</span></div>
-      </div>
-      <div class="cell" style="--accent:var(--royal);background:var(--surface)">
-        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
-        <span class="role">Next</span>
-        <h3>Room to grow</h3>
-        <p>New ventures inherit this system on day one: the values, the palette, the voice, and the operating standard. Nothing gets built off-brand.</p>
+        <p>A separate rental brand, established 2022, deliberately run apart from the 420 identity so it can host non-cannabis guests. Own Facebook presence and a mural at Altitude.</p>
+        <div class="facts"><span>Active</span><span>ESTD 2022</span><span>Non-420 audience</span></div>
       </div>
     </div>
+
+    <p class="grouplabel">Services &middot; cleaning</p>
+    <div class="grid2">
+      <div class="cell" style="--accent:var(--b-sameday)">
+        <span class="logochip"><img src="assets/sameday-logo.png" alt="Same-Day BNB Cleaners logo"/></span>
+        <span class="role">B2B cleaning</span>
+        <h3>Same-Day BNB Cleaners</h3>
+        <p>A cleaning company, not a rental brand. It sells short-term rental turnover cleaning outward to other hosts, on properties Cashaw does not own. Live and billing through its own Square account.</p>
+        <div class="facts"><span>Live &amp; billing</span><span>Non-Cashaw properties</span><span>Gold + black mark</span></div>
+      </div>
+      <div class="cell cs" style="--accent:var(--b-clearsite)">
+        <span class="logochip"><img src="assets/clearsite-logo.png" alt="Clearsite logo"/></span>
+        <span class="role">Residential &amp; commercial cleaning</span>
+        <h3>Clearsite</h3>
+        <p>Residential, post-construction, and Space Force base work. A different market from Same-Day BNB Cleaners, which is why the two cleaning companies stay separate rather than merging.</p>
+        <div class="facts"><span>Active business</span><span>Post-construction</span><span>Orange on black</span></div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:26px"><b>Rule:</b> the Same-Day BNB Cleaners mark never appears on a Cashaw or KushKations property. It exists to sell cleaning outward. Cashaw&rsquo;s own homes are cleaned by the in-house team under neither subsidiary mark.</p>
   </div>
 </section>
 
@@ -519,15 +539,15 @@
     <div class="head">
       <p class="eyebrow">Visual system</p>
       <h2>High-contrast professional palette.</h2>
-      <p class="lede">Slate navy and crisp white carry the corporate system, with royal blue as the primary action color. Each brand then carries its own accent: KushKations green, All Exclusive and Same-Day in the blue-to-teal range, and Clearsite in orange on black. Every value on this page clears WCAG AA at 4.5:1 or better.</p>
+      <p class="lede">Slate navy and crisp white carry the corporate system, with royal blue as the primary action color. Each brand then carries the colour of its own mark: KushKations green, All Exclusive teal, Same-Day BNB Cleaners gold on black, Clearsite orange on black. The &ldquo;never red or orange&rdquo; rule scopes only to Cashaw and KushKations, so the sister brands are not in breach. Every value here clears WCAG AA at 4.5:1 or better.</p>
     </div>
 
     <p class="sub-label">Brand accents</p>
     <div class="swatches" style="grid-template-columns:repeat(5,1fr);margin-bottom:36px">
       <div class="sw"><div class="c" style="background:#1546c4"></div><div class="t"><b>Cashaw</b><code>#1546c4</code><span class="ratio">7.22:1</span></div></div>
       <div class="sw"><div class="c" style="background:#3d6f42"></div><div class="t"><b>KushKations</b><code>#3d6f42</code><span class="ratio">5.61:1</span></div></div>
-      <div class="sw"><div class="c" style="background:#0a6485"></div><div class="t"><b>All Exclusive</b><code>#0a6485</code><span class="ratio">6.16:1</span></div></div>
-      <div class="sw"><div class="c" style="background:#0f6f74"></div><div class="t"><b>Same-Day</b><code>#0f6f74</code><span class="ratio">5.51:1</span></div></div>
+      <div class="sw"><div class="c" style="background:#0f6a7d"></div><div class="t"><b>All Exclusive</b><code>#0f6a7d</code><span class="ratio">5.89:1</span></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#d4a017 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Same-Day Cleaners</b><code>#d4a017 / #0b0b0b</code><span class="ratio">6.05:1</span></div></div>
       <div class="sw"><div class="c" style="background:linear-gradient(135deg,#f97316 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Clearsite</b><code>#f97316 / #0b0b0b</code><span class="ratio">7.02:1</span></div></div>
     </div>
 
@@ -671,10 +691,7 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        <a class="logo" href="#top">
-          <span class="mark">C</span>
-          <span class="name" style="color:#fff">CASHAW <span style="color:#a8c4e8">MANAGEMENT</span></span>
-        </a>
+        <img class="foot-logo" src="assets/cashaw-logo.png" alt="Cashaw Management Inc. logo"/>
         <p>Short-term rental management, cleaning, and property operations. Committed to securing your success.</p>
         <p style="margin-top:16px;color:#c3d2e6">500 E. 84th Ave, Suite A1<br/>Thornton, CO 80229</p>
       </div>
