@@ -32,9 +32,9 @@
     --navy-900:#0b1626; --navy-800:#12233a; --navy-700:#1c3454;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
     --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
-    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0f6a7d;
-    --b-sameday:#7a5a06; --b-clearsite:#a34a05;
-    --cs-fill:#f97316; --cs-black:#0b0b0b; --sd-gold:#d4a017;
+    --b-cashaw:#7a5a06; --b-kk:#3d6f42; --b-aebnb:#0f6a7d;
+    --b-sameday:#7a5a06;
+    --gold-fill:#d4a017; --brand-black:#0b0b0b; --kk-orange:#ef6c1a;
     --kk-accent:#3d6f42;
     --focus:#1546c4;
     --header-h:70px;
@@ -45,9 +45,9 @@
       --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160; --hair-soft:#213550;
       --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
       --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
-      --b-cashaw:#7aa9ff; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
-      --b-sameday:#e8b93a; --b-clearsite:#fb923c;
-      --cs-fill:#fb923c; --cs-black:#0b0b0b;
+      --b-cashaw:#e8b93a; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
+      --b-sameday:#e8b93a;
+      --gold-fill:#e8b93a; --brand-black:#0b0b0b; --kk-orange:#fb923c;
       --kk-accent:#65bc7b; --focus:#7aa9ff;
     }
   }
@@ -55,18 +55,18 @@
     --bg:#0b1626; --surface:#12233a; --surface-2:#1a2f4b; --hair:#2a4160; --hair-soft:#213550;
     --ink:#f3f7fc; --ink-soft:#b6c6da; --ink-faint:#98abc4;
     --royal:#7aa9ff; --royal-hover:#9dc0ff; --teal:#4fd1c5;
-    --b-cashaw:#7aa9ff; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
-    --b-sameday:#e8b93a; --b-clearsite:#fb923c;
-    --cs-fill:#fb923c; --cs-black:#0b0b0b;
+    --b-cashaw:#e8b93a; --b-kk:#65bc7b; --b-aebnb:#57c3dd;
+    --b-sameday:#e8b93a;
+    --gold-fill:#e8b93a; --brand-black:#0b0b0b; --kk-orange:#fb923c;
     --kk-accent:#65bc7b; --focus:#7aa9ff;
   }
   :root[data-theme="light"]{
     --bg:#ffffff; --surface:#f7f9fc; --surface-2:#eef3f9; --hair:#cbd6e4; --hair-soft:#dde5ef;
     --ink:#0b1626; --ink-soft:#41546c; --ink-faint:#55677e;
     --royal:#1546c4; --royal-hover:#0f3aa8; --teal:#0f6f74;
-    --b-cashaw:#1546c4; --b-kk:#3d6f42; --b-aebnb:#0f6a7d;
-    --b-sameday:#7a5a06; --b-clearsite:#a34a05;
-    --cs-fill:#f97316; --cs-black:#0b0b0b;
+    --b-cashaw:#7a5a06; --b-kk:#3d6f42; --b-aebnb:#0f6a7d;
+    --b-sameday:#7a5a06;
+    --gold-fill:#d4a017; --brand-black:#0b0b0b; --kk-orange:#ef6c1a;
     --kk-accent:#3d6f42; --focus:#1546c4;
   }
 
@@ -204,7 +204,7 @@
     background:var(--royal);margin-bottom:16px}
 
   /* full-bleed brand ramp band under the hero */
-  .rampband{display:grid;grid-template-columns:repeat(5,1fr)}
+  .rampband{display:grid;grid-template-columns:repeat(4,1fr)}
   .rampband .rb{background:var(--c);color:#fff;padding:24px 26px;
     display:flex;flex-direction:column;gap:3px;min-height:104px;justify-content:flex-end}
   .rampband .rb b{font-size:1rem;font-weight:700;line-height:1.25}
@@ -236,14 +236,11 @@
     color:var(--ink-faint);margin:34px 0 16px;display:flex;align-items:center;gap:12px}
   .grouplabel::after{content:"";flex:1;height:1px;background:var(--hair)}
 
-  /* Clearsite runs orange on black */
-  .cell.cs .icon{background:var(--cs-black);border-color:var(--cs-black);color:#fb923c}
-  .rampband .rb.cs{background:var(--cs-fill);color:var(--cs-black)}
-  .rampband .rb.cs b,.rampband .rb.cs span{color:var(--cs-black)}
-  .rampband .rb.cs span{opacity:.78}
-  .rampband .rb.sd{background:var(--sd-gold);color:#0b0b0b}
-  .rampband .rb.sd b,.rampband .rb.sd span{color:#0b0b0b}
-  .rampband .rb.sd span{opacity:.78}
+  /* Cashaw and Same-Day run gold on black */
+  .cell.gd .icon{background:var(--brand-black);border-color:var(--brand-black);color:var(--gold-fill)}
+  .rampband .rb.gd{background:var(--gold-fill);color:#0b0b0b}
+  .rampband .rb.gd b,.rampband .rb.gd span{color:#0b0b0b}
+  .rampband .rb.gd span{opacity:.8}
 
   /* cards gain an accent edge + lift on hover */
   .cell{position:relative;transition:border-color .16s,transform .16s}
@@ -479,11 +476,10 @@
 
 
 <div class="rampband" aria-label="Brand accent ramp">
-  <div class="rb" style="--c:#1546c4"><b>Cashaw Management</b><span>#1546c4</span></div>
+  <div class="rb gd" style="--c:#d4a017"><b>Cashaw Management</b><span>#d4a017 / #0b0b0b</span></div>
   <div class="rb" style="--c:#3d6f42"><b>KushKations</b><span>#3d6f42</span></div>
   <div class="rb" style="--c:#0f6a7d"><b>All Exclusive BNB</b><span>#0f6a7d</span></div>
-  <div class="rb sd" style="--c:#d4a017"><b>Same-Day BNB Cleaners</b><span>#d4a017 / #0b0b0b</span></div>
-  <div class="rb cs" style="--c:#f97316"><b>Clearsite</b><span>#f97316 / #0b0b0b</span></div>
+  <div class="rb gd" style="--c:#d4a017"><b>Same-Day BNB Cleaners</b><span>#d4a017 / #0b0b0b</span></div>
 </div>
 
 <div class="shell">
@@ -502,11 +498,10 @@
     <div class="sep"></div>
     <h4>The Brands</h4>
     <nav>
-      <a href="#family"><i class="dot" style="background:var(--b-cashaw);opacity:1"></i>Cashaw Mgmt</a>
+      <a href="#family"><i class="dot" style="background:var(--gold-fill);opacity:1"></i>Cashaw Mgmt</a>
       <a href="#family"><i class="dot" style="background:var(--b-kk);opacity:1"></i>KushKations</a>
       <a href="#family"><i class="dot" style="background:var(--b-aebnb);opacity:1"></i>All Exclusive</a>
       <a href="#family"><i class="dot" style="background:var(--b-sameday);opacity:1"></i>Same-Day BNB</a>
-      <a href="#family"><i class="dot" style="background:var(--b-clearsite);opacity:1"></i>Clearsite</a>
     </nav>
     <div class="sep"></div>
     <h4>Quick links</h4>
@@ -538,7 +533,7 @@
         <p>Do it right even when nobody checks. An honest &ldquo;not yet&rdquo; beats a fake &ldquo;done,&rdquo; because we would rather hear a hard truth early than a comfortable one late.</p>
       </div>
       <div class="cell"><span class="num">03</span><span class="icon"><svg viewBox="0 0 24 24"><path d="M3 19l6-7 4 4 4-6 4 5"/><path d="M3 19h18"/><circle cx="9" cy="12" r="1.4"/></svg></span>
-        <h3>Persistence</h3><span class="sub-es">Persistencia</span>
+        <h3>Determination</h3><span class="sub-es">Determinaci&oacute;n</span>
         <p>&ldquo;No&rdquo; is a starting point, not an answer. Vendor booked, part discontinued, guest arriving at four: we still find a way. Encontramos la manera.</p>
       </div>
       <div class="cell"><span class="num">04</span><span class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M16 14.4c3 .3 5 2.4 5 5.6"/></svg></span>
@@ -563,11 +558,11 @@
     <div class="head">
       <p class="eyebrow">The portfolio</p>
       <h2>A family of brands under one roof.</h2>
-      <p class="lede">Cashaw Management Inc. is the parent. Two brands host guests, two sell cleaning outward to clients we don&rsquo;t own, and all five are active, trading businesses. They share values, a palette, and an operating standard, but each one is pointed at a market the others deliberately don&rsquo;t serve.</p>
+      <p class="lede">Cashaw Management Inc. is the parent. Two brands host guests, one sells cleaning outward to clients we don&rsquo;t own, and all four are active, trading businesses. They share values, a palette, and an operating standard, but each one is pointed at a market the others deliberately don&rsquo;t serve.</p>
     </div>
 
     <div class="grid3">
-      <div class="cell" style="--accent:var(--b-cashaw);grid-column:1/-1">
+      <div class="cell gd" style="--accent:var(--b-cashaw);grid-column:1/-1">
         <span class="logochip"><img src="assets/cashaw-logo.png" alt="Cashaw Management Inc. logo"/></span>
         <span class="role">Parent company</span>
         <h3>Cashaw Management Inc.</h3>
@@ -598,22 +593,14 @@
 
     <p class="grouplabel">Services &middot; cleaning</p>
     <div class="grid2">
-      <div class="cell" style="--accent:var(--b-sameday)">
+      <div class="cell gd" style="--accent:var(--b-sameday)">
         <span class="logochip"><img src="assets/sameday-logo.png" alt="Same-Day BNB Cleaners logo"/></span>
         <span class="role">B2B cleaning</span>
         <h3>Same-Day BNB Cleaners</h3>
         <p>A cleaning company, not a rental brand, despite the BNB in the name. It sells short-term rental turnover cleaning outward to other hosts, on properties Cashaw does not own, and bills independently through its own Square account. Its procedures are scoped to non-Cashaw properties by design.</p>
         <div class="facts"><span>Live &amp; billing</span><span>Non-Cashaw properties</span><span>Gold + black mark</span></div>
       </div>
-      <div class="cell cs" style="--accent:var(--b-clearsite)">
-        <span class="logochip"><img src="assets/clearsite-logo.png" alt="Clearsite logo"/></span>
-        <span class="role">Residential &amp; commercial cleaning</span>
-        <h3>Clearsite</h3>
-        <p>The second cleaning company, aimed at a completely different market: residential cleans, post-construction cleanup, and Space Force base work. That distance from rental turnovers is exactly why the two cleaning brands stay separate instead of collapsing into one.</p>
-        <div class="facts"><span>Active business</span><span>Post-construction</span><span>Orange on black</span></div>
-      </div>
     </div>
-
     <p class="note" style="margin-top:26px"><b>Rule:</b> the Same-Day BNB Cleaners mark never appears on a Cashaw or KushKations property. It exists to sell cleaning outward. Cashaw&rsquo;s own homes are cleaned by the in-house team under neither subsidiary mark.</p>
   </div>
 </section>
@@ -624,16 +611,16 @@
     <div class="head">
       <p class="eyebrow">Visual system</p>
       <h2>High-contrast professional palette.</h2>
-      <p class="lede">Slate navy and crisp white carry the corporate system, with royal blue as the primary action color. Each brand then carries the colour of its own mark: KushKations green, All Exclusive teal, Same-Day BNB Cleaners gold on black, Clearsite orange on black. The &ldquo;never red or orange&rdquo; rule scopes only to Cashaw and KushKations, so the sister brands are not in breach. Every value here clears WCAG AA at 4.5:1 or better.</p>
+      <p class="lede">Each brand carries the colour of its own mark. Cashaw Management and Same-Day BNB Cleaners run gold on black, KushKations pairs its greens with an orange accent, and All Exclusive BNB carries teal. Slate grounds and crisp white hold the corporate layout together. Every value here clears WCAG AA at 4.5:1 or better.</p>
     </div>
 
     <p class="sub-label">Brand accents</p>
-    <div class="swatches" style="grid-template-columns:repeat(5,1fr);margin-bottom:36px">
-      <div class="sw"><div class="c" style="background:#1546c4"></div><div class="t"><b>Cashaw</b><code>#1546c4</code><span class="ratio">7.22:1</span></div></div>
-      <div class="sw"><div class="c" style="background:#3d6f42"></div><div class="t"><b>KushKations</b><code>#3d6f42</code><span class="ratio">5.61:1</span></div></div>
+    <div class="swatches" style="grid-template-columns:repeat(4,1fr);margin-bottom:36px">
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#d4a017 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Cashaw</b><code>#d4a017 / #0b0b0b</code><span class="ratio">8.29:1</span></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#3d6f42 0 60%,#ef6c1a 60% 100%)"></div><div class="t"><b>KushKations</b><code>#3d6f42 + #ef6c1a</code><span class="ratio">green + orange</span></div></div>
       <div class="sw"><div class="c" style="background:#0f6a7d"></div><div class="t"><b>All Exclusive</b><code>#0f6a7d</code><span class="ratio">5.89:1</span></div></div>
-      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#d4a017 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Same-Day Cleaners</b><code>#d4a017 / #0b0b0b</code><span class="ratio">6.05:1</span></div></div>
-      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#f97316 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Clearsite</b><code>#f97316 / #0b0b0b</code><span class="ratio">7.02:1</span></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#d4a017 0 50%,#0b0b0b 50% 100%)"></div><div class="t"><b>Same-Day Cleaners</b><code>#d4a017 / #0b0b0b</code><span class="ratio">8.29:1</span></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#3d6f42 0 60%,#ef6c1a 60% 100%)"></div><div class="t"><b>KushKations orange</b><code>#ef6c1a</code><span class="ratio">accent</span></div></div>
     </div>
 
     <p class="sub-label">Core &amp; neutrals</p>
@@ -712,7 +699,7 @@
         <div class="cap"><b>Minimum size</b><span>Never below 26px tall on screen or 0.75in in print. Below that the wordmark stops being readable.</span></div>
       </div>
       <div class="lspec">
-        <div class="frame"><img src="assets/clearsite-logo.png" alt="Clearsite logo on white"/></div>
+        <div class="frame"><img src="assets/sameday-logo.png" alt="Same-Day BNB Cleaners logo on white"/></div>
         <div class="cap"><b>Give it a clean ground</b><span>Place marks on white or a plain brand colour. Never on a busy photo or a competing pattern.</span></div>
       </div>
       <div class="lspec dont">
@@ -734,11 +721,9 @@
       <a href="assets/cashaw-logo.png" download>Cashaw Management <span>PNG</span></a>
       <a href="assets/cashaw-logo.svg" download>Cashaw Management <span>SVG</span></a>
       <a href="assets/cashaw-logo-white.svg" download>Cashaw, white <span>SVG</span></a>
-      <a href="assets/cashaw-logo-navy.svg" download>Cashaw, navy <span>SVG</span></a>
       <a href="assets/kushkations-logo.png" download>KushKations <span>PNG</span></a>
       <a href="assets/allexclusive-logo.png" download>All Exclusive BNB <span>PNG</span></a>
       <a href="assets/sameday-logo.png" download>Same-Day BNB Cleaners <span>PNG</span></a>
-      <a href="assets/clearsite-logo.png" download>Clearsite <span>PNG</span></a>
     </div>
     <p class="note"><b>Still missing:</b> vector versions of the four sister-brand marks. Only Cashaw has an SVG today, so the others should not be blown up large for print until vectors exist.</p>
   </div>
@@ -773,7 +758,7 @@
           <li>Style to checkout standard: beds made, counters clear, towels set.</li>
         </ul>
       </div>
-      <div class="cell" style="--accent:var(--b-clearsite)"><h3>Don&rsquo;t</h3>
+      <div class="cell" style="--accent:#b5510a"><h3>Don&rsquo;t</h3>
         <ul class="vlist" style="margin-top:12px">
           <li>No house numbers, street signs, or anything that identifies an address.</li>
           <li>No guests, staff, or personal belongings in shot.</li>
